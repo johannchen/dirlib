@@ -32,8 +32,8 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: dirlib_production
+  database: p60161r4_dirlib
   pool: 5
-  username: root
-  password:
+  username: p60161r4_jchen
+  password: o@ses99
   socket: /tmp/mysql.sock
