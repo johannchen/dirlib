@@ -1,0 +1,38 @@
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-11 12:33:19 -0600
+
+Mysql2::Error (Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (22.2ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-11 12:34:02 -0600
+
+Mysql2::Error (Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-11 12:34:25 -0600
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 84ms (Views: 83.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-11 13:14:44 -0600
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-11 13:51:52 -0600
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
