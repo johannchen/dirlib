@@ -21,6 +21,15 @@
 
                 </div><!-- #branding -->
 
+      <div id="user_nav">
+        <% if current_user %>
+          Logged in as <%= current_user.email %> |
+          <%= link_to "Log out", log_out_path %>
+        <% else %>
+          <%= link_to "Sign up", sign_up_path %> |
+          <%= link_to "Log in", log_in_path %>
+        <% end %>
+      </div>
       <div id="access" role="navigation">
                 <div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
 
@@ -33,6 +42,9 @@
 
     <div id="container">
       <div id="content" role="main">
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
 <%= yield %>
       </div><!-- #content -->
     </div><!-- #container -->
