@@ -23,7 +23,7 @@
 
       <div id="user_nav">
         <% if current_user %>
-          Logged in as <%= current_user.email %> |
+          Logged in as <%= current_user.name %> |
           <%= link_to "Log out", log_out_path %>
         <% else %>
           <%= link_to "Sign up", sign_up_path %> |
@@ -33,7 +33,13 @@
       <div id="access" role="navigation">
                 <div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
 
-                <div class="menu"><ul><li class="current_page_item"><a href="" title="Home">Home</a></li><li class="page_item page-item-2"><a href="" title="About">About</a></li></ul></div>
+                <div class="menu">
+<ul><li class="current_page_item"><a href="" title="Home">Home</a></li>
+<% if current_user %>
+<li class="page_item page-item-2"><%= link_to 'Profile', user_path(current_user) %></li>
+<% end %>
+<li class="page_item page-item-2"><a href="#" title="About">About</a></li>
+</ul></div>
       </div><!-- #access -->
     </div><!-- #masthead -->
   </div><!-- #header -->
@@ -51,22 +57,8 @@
 
     <div id="primary" class="widget-area" role="complementary">
       <ul class="xoxo">
-
-<li id="search-2" class="widget-container widget_search">
-  <form role="search" method="get" id="searchform">
-  <div><label class="screen-reader-text" for="s">Search for:</label>
-  <input type="text" value="" name="s" id="s" />
-  <input type="submit" id="searchsubmit" value="Search" />
-  </div>
-  </form>
-</li>  
-<li id="recent-posts-2" class="widget-container widget_recent_entries"> 
-  <h3 class="widget-title">Sub Menu</h3>   
-    <ul>
-        <li><a href="" title="">M1</a></li>
-        <li><a href="" title="">M2</a></li>
-        <li><a href="" title="">M3</a></li>
-    </ul>
+<li id="recent-posts-2" class="widget-container"> 
+      <%= yield :sidebar%>
 </li>
 </ul>
     </div><!-- #primary .widget-area -->

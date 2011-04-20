@@ -1,0 +1,12 @@
+<% content_for :sidebar do %>
+  <h3 class="widget-title">Edit Profile</h3>   
+    <ul>
+        <li><%= link_to 'Change password', edit_user_path(@user) %></li>
+        <% if contact =  @user.contact %>
+        <li><%= link_to 'Update profile', edit_user_contact_path(@user, contact) %></li>
+        <% else %>
+        <li><%= link_to 'Update profile', new_user_contact_path(@user) %></li>
+        <% end %>
+    </ul>
+<% end %>
+
