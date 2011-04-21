@@ -1,14 +1,24 @@
 class ContactsController < ApplicationController
+  def index
+    @contacts = Contact.all
+  end
+  
   def new
-    @contact = Contact.new
+    if params[:profile]
+      @contact = Contact.new(:user_id => current_user.id, :email => current_user.email, :name => current_user.name)
+    else
+      @contact = Contact.new
+    end 
   end
 
   def create
-    params[:contact][:user_id] = params[:user_id] unless params[:user_id].nil?
     @contact = Contact.new(params[:contact])
 
-    if @contact.save
-      redirect_to @contact, :notice => 'Profile was created.'
+    if @contact.save 
+      # create contact under user
+      @contact.users << current_user unless params[:profile]
+      # TODO: redirect to appropiate url
+      redirect_to user_path(current_user), :notice => 'Contact/Profile was created.'
     else
       render :action => "new"
     end
@@ -22,7 +32,7 @@ class ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
 
     if @contact.update_attributes(params[:contact])
-      redirect_to @contact, :notice => 'Contact was successfully updated.'
+      redirect_to user_path(current_user), :notice => 'Contact/Profile was successfully updated.'
     else
       render :action => "edit"
     end

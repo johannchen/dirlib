@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_one :contact
+  has_many :relationships
+  has_many :contacts, :through => :relationships
 
   attr_accessible :name, :email, :password, :password_confirmation
 

@@ -22,6 +22,9 @@
     <%= f.label :cell_phone %><br />
     <%= f.text_field :cell_phone %>
   </p>
+  <% if params[:profile] %>
+    <%= f.hidden_field :user_id %>
+  <% end %>
   <p class="button"><%= f.submit %></p>
 <% end %>
 
