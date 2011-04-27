@@ -1,0 +1,19 @@
+<%= form_for(@group) do |f| %>
+  <% if @group.errors.any? %>
+    <div class="ui-widget">
+      <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+      <% @group.errors.full_messages.each do |msg| %>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span><%= message %><br />
+      <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

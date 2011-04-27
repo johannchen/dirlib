@@ -1,2 +1,7 @@
-<h1>Edit Contact</h1>
+<% if params[:profile] %>
+  <%= render 'users/profile_sidebar' %>
+<% else %>
+  <%= render 'directory_sidebar' %>
+<% end %>
+<h1><%= @contact.name %></h1>
 <%= render 'form' %>

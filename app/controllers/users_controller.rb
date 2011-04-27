@@ -1,18 +1,14 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource
+
   def new
-    @user = User.new
   end
 
   def show
-    @user = User.find(params[:id])
-
-    respond_to do |format|
-      format.html
-    end
+    @contact = @user.contact
   end
 
   def create
-    @user = User.new(params[:user])
     if @user.save
       UserMailer.registration_confirmation(@user).deliver
       redirect_to root_url, :notice => "Signed up!"
@@ -22,12 +18,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
-
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to(@user, :notice => 'User was successfully updated.')}

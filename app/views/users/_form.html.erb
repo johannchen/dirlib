@@ -1,31 +1,35 @@
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
+    <div class="ui-widget">
+      <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
         <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span><%= message %><br />
         <% end %>
-      </ul>
+      </div>
     </div>
   <% end %>
 
-  <p>
-    <%= f.label :name %><br />
+  <div class="field">
+    <%= f.label :login_name %><br />
     <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
+  </div>
+  <div class="field">
+    <%= f.label :login_email %><br />
     <%= f.text_field :email %>
-  </p>
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password %><br />
-  </p>
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
-  </p>
+  </div>
+  <% if current_user.admin %>
+  <div class="field">
+    <%= f.check_box :admin %> <%= f.label :admin %>
+  </div>
+  <% end %>
   <p class="button"><%= f.submit %></p>
 <% end %>
 

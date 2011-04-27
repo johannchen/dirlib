@@ -1,3 +1,18 @@
 <%= render 'directory_sidebar' %>
 
 <h1>Directory</h1>
+
+<table>
+  <tr>
+    <th>Name</th><th>Email</th><th>Cell</th><th></th>
+  </tr>
+
+<% @contacts.each do |contact| %>
+  <tr>
+    <td><%= contact.name %></td>
+    <td><%= contact.email%></td>
+    <td><%= number_to_phone(contact.cell_phone)%></td>
+    <td><%= link_to 'Show', contact %></td>
+  </tr>
+<% end %>
+</table>

@@ -1,3 +1,5 @@
 <%= render 'profile_sidebar' %>
-
-<h1>Profile of <%= @user.name %></h1>
+<h1><%= @user.name %></h1>
+<% if @contact %>
+  <%= render 'contacts/contact_details' %>
+<% end %>

@@ -8,7 +8,18 @@ gem 'rails', '3.0.5'
 gem 'mysql2'
 gem 'thin'
 
+# password encrypt
 gem 'bcrypt-ruby', :require => 'bcrypt'
+
+# jQuery
+gem 'jquery-rails'
+
+# authorization
+gem 'cancan'
+
+# image upload
+#gem 'rmagick'
+#gem 'carrierwave'
 
 # Use unicorn as the web server
 # gem 'unicorn'

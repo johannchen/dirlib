@@ -1,0 +1,10 @@
+<div id="avatar">
+<%= image_tag avatar_url(@contact) %>
+</div>
+<div id="contact_line">
+<%= @contact.email %> <%= number_to_phone(@contact.cell_phone) %> <%=number_to_phone(@contact.work_phone) %>
+</div>
+<p>
+  <%= @contact.address %>
+</p>
+

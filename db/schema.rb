@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110420234431) do
+ActiveRecord::Schema.define(:version => 20110426224827) do
+
+  create_table "contact_groups", :force => true do |t|
+    t.integer  "contact_id"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "contacts", :force => true do |t|
     t.integer  "user_id"
@@ -34,6 +41,22 @@ ActiveRecord::Schema.define(:version => 20110420234431) do
     t.datetime "photo_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "address_line_1"
+    t.string   "address_line_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.boolean  "newcomer",             :default => false
+    t.boolean  "member",               :default => false
+    t.boolean  "staff",                :default => false
+    t.boolean  "elder",                :default => false
+    t.boolean  "deacon",               :default => false
+  end
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "relationships", :force => true do |t|
@@ -51,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20110420234431) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.boolean  "admin"
   end
 
 end
