@@ -7993,3 +7993,1077 @@ ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
   
 
 Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-27 15:05:43 -0600
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (372.1ms)
+Completed 200 OK in 376ms (Views: 375.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:05:44 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-27 15:05:47 -0600
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered users/_admin_sidebar.html.erb (1.2ms)
+  [1m[35mUser Load (71.1ms)[0m  SELECT `users`.* FROM `users`
+Rendered users/index.html.erb within layouts/application (166.0ms)
+Completed 200 OK in 234ms (Views: 106.1ms | ActiveRecord: 71.2ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:05:47 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-27 15:07:11 -0600
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered users/_admin_sidebar.html.erb (2.0ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT `users`.* FROM `users`
+Rendered users/index.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 142ms (Views: 52.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:07:11 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-27 15:08:40 -0600
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered users/_admin_sidebar.html.erb (1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users`
+Rendered users/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 184ms (Views: 13.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:08:41 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.4ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2011-04-27 15:10:30 -0600
+  Processing by GroupsController#index as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT `groups`.* FROM `groups`[0m
+Rendered groups/index.html.erb within layouts/application (41.4ms)
+Completed   in 77ms
+
+ActionView::Template::Error (Missing partial groups/admin_sidebar with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/home/vadmin/Apps/dirlib/app/views"):
+    1: <%= render 'admin_sidebar' %>
+    2: <h1>Groups</h1>
+    3: 
+    4: <table>
+  app/views/groups/index.html.erb:1:in `_app_views_groups_index_html_erb___997096134_85684640_603212888'
+  app/controllers/groups_controller.rb:7:in `index'
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (26.1ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.9ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2011-04-27 15:11:41 -0600
+  Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.7ms)[0m  SELECT `groups`.* FROM `groups`
+Rendered users/_admin_sidebar.html.erb (2.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered groups/index.html.erb within layouts/application (121.4ms)
+Completed 200 OK in 147ms (Views: 127.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:11:41 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/log_out" for 127.0.0.1 at 2011-04-27 15:12:30 -0600
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-27 15:12:30 -0600
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 10ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:12:30 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/log_in" for 127.0.0.1 at 2011-04-27 15:12:33 -0600
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:12:33 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-27 15:12:40 -0600
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cXsXnhM6AzDoCsw4BeEtalhWVGFWxWYMugQKccBj0u8=", "email"=>"penchen@ucdavis.edu", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'penchen@ucdavis.edu' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 163ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-27 15:12:40 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:12:41 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2011-04-27 15:12:43 -0600
+  Processing by ContactsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mRelationship Load (0.6ms)[0m  [1mSELECT DISTINCT `relationships`.contact_id FROM `relationships` WHERE (`relationships`.user_id = 2)[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb__605648345_85827060_781247548 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+Rendered contacts/_directory_sidebar.html.erb (2.8ms)
+  [1m[35mContact Load (40.9ms)[0m  SELECT `contacts`.* FROM `contacts` INNER JOIN `relationships` ON `contacts`.id = `relationships`.contact_id WHERE ((`relationships`.user_id = 2))
+Rendered contacts/index.html.erb within layouts/application (118.3ms)
+Completed 200 OK in 241ms (Views: 90.6ms | ActiveRecord: 41.6ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:12:43 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2011-04-27 15:12:50 -0600
+  Processing by GroupsController#index as HTML
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT `groups`.* FROM `groups`[0m
+Rendered users/_admin_sidebar.html.erb (1.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+Rendered groups/index.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 46ms (Views: 36.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:12:51 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2011-04-27 15:15:44 -0600
+  Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mRelationship Load (1.2ms)[0m  SELECT DISTINCT `relationships`.contact_id FROM `relationships` WHERE (`relationships`.user_id = 2)
+Completed   in 107ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-27 15:15:44 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:15:44 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/log_out" for 127.0.0.1 at 2011-04-27 15:15:54 -0600
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-27 15:15:54 -0600
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:15:54 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/log_in" for 127.0.0.1 at 2011-04-27 15:15:58 -0600
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:15:58 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.9ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-27 15:16:08 -0600
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cXsXnhM6AzDoCsw4BeEtalhWVGFWxWYMugQKccBj0u8=", "email"=>"johannchen@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mUser Load (3.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'johannchen@gmail.com' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 213ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-27 15:16:09 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:16:09 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-27 15:16:12 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+Rendered users/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 47ms (Views: 17.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:16:12 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2011-04-27 15:16:17 -0600
+  Processing by GroupsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.1ms)
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT `groups`.* FROM `groups`[0m
+Rendered groups/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 54ms (Views: 14.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:16:17 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-04-27 15:18:55 -0600
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (21.9ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1[0m
+Rendered users/_profile_sidebar.html.erb (25.1ms)
+Rendered contacts/_contact_details.html.erb (1.3ms)
+Rendered users/show.html.erb within layouts/application (64.9ms)
+Completed 200 OK in 191ms (Views: 68.0ms | ActiveRecord: 22.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:18:56 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/contacts/1/edit?profile=true" for 127.0.0.1 at 2011-04-27 15:19:00 -0600
+  Processing by ContactsController#edit as HTML
+  Parameters: {"profile"=>"true", "id"=>"1"}
+  [1m[35mContact Load (0.5ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1
+Rendered users/_profile_sidebar.html.erb (23.1ms)
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT `groups`.* FROM `groups`[0m
+  [1m[35mGroup Load (47.7ms)[0m  SELECT `groups`.*, `groups`.`id` FROM `groups` INNER JOIN `contact_groups` ON `groups`.id = `contact_groups`.group_id WHERE `groups`.`id` = 1 AND ((`contact_groups`.contact_id = 1)) LIMIT 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT `groups`.*, `groups`.`id` FROM `groups` INNER JOIN `contact_groups` ON `groups`.id = `contact_groups`.group_id WHERE `groups`.`id` = 2 AND ((`contact_groups`.contact_id = 1)) LIMIT 1[0m
+Rendered contacts/_form.html.erb (107.3ms)
+Rendered contacts/edit.html.erb within layouts/application (165.6ms)
+Completed 200 OK in 242ms (Views: 122.5ms | ActiveRecord: 48.9ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:19:01 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-27 15:19:08 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+Rendered users/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 60ms (Views: 16.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:19:08 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2011-04-27 15:28:39 -0600
+  Processing by GroupsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.0ms)
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT `groups`.* FROM `groups`[0m
+Rendered groups/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 102ms (Views: 48.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:28:40 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/groups/1" for 127.0.0.1 at 2011-04-27 15:28:42 -0600
+  Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGroup Load (0.4ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered groups/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 79ms (Views: 42.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:28:42 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2011-04-27 15:28:50 -0600
+  Processing by GroupsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.2ms)
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT `groups`.* FROM `groups`[0m
+Rendered groups/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 83ms (Views: 14.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:28:50 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/groups/1" for 127.0.0.1 at 2011-04-27 15:29:57 -0600
+  Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGroup Load (0.2ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered groups/show.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 103ms (Views: 20.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:29:57 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2011-04-27 15:31:05 -0600
+  Processing by GroupsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.1ms)
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT `groups`.* FROM `groups`[0m
+Rendered groups/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 55ms (Views: 15.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2011-04-27 15:31:05 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/defaults.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/groups/1" for 127.0.0.1 at 2011-04-27 15:31:12 -0600
+  Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGroup Load (0.1ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered groups/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 91ms (Views: 9.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2011-04-27 15:31:13 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/defaults.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2011-04-27 15:31:16 -0600
+  Processing by GroupsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.0ms)
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT `groups`.* FROM `groups`[0m
+Rendered groups/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 74ms (Views: 23.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2011-04-27 15:31:16 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/defaults.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-27 15:34:39 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+Rendered users/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 41ms (Views: 13.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 15:34:40 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-04-27 16:51:03 -0600
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (0.6ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1[0m
+Rendered users/_profile_sidebar.html.erb (51.9ms)
+Rendered contacts/_contact_details.html.erb (6.6ms)
+Rendered users/show.html.erb within layouts/application (106.3ms)
+Completed 200 OK in 1234ms (Views: 175.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 16:51:06 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2011-04-27 16:51:12 -0600
+  Processing by ContactsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb__605648345_86027770_781247548 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+Rendered contacts/_directory_sidebar.html.erb (1.5ms)
+  [1m[36mContact Load (92.9ms)[0m  [1mSELECT `contacts`.* FROM `contacts` INNER JOIN `relationships` ON `contacts`.id = `relationships`.contact_id WHERE ((`relationships`.user_id = 1))[0m
+Rendered contacts/index.html.erb within layouts/application (127.9ms)
+Completed 200 OK in 255ms (Views: 46.5ms | ActiveRecord: 93.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 16:51:13 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-27 16:51:21 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (3.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+Rendered users/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 182ms (Views: 41.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 16:51:21 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2011-04-27 16:51:27 -0600
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (1.5ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 3) LIMIT 1
+  [1m[36mContact Load (33.5ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1[0m
+Rendered users/_profile_sidebar.html.erb (81.8ms)
+Rendered users/show.html.erb within layouts/application (85.8ms)
+Completed 200 OK in 145ms (Views: 55.2ms | ActiveRecord: 36.8ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 16:51:28 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-27 16:52:36 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+ERROR: compiling _app_views_layouts_application_html_erb__29101458_85726320_603212888 RAISED /home/vadmin/Apps/dirlib/app/views/layouts/application.html.erb:7: syntax error, unexpected '<', expecting ')'
+  <%= javascript_include_tag "ht...
+   ^
+/home/vadmin/Apps/dirlib/app/views/layouts/application.html.erb:8: syntax error, unexpected '(', expecting ')'
+...('  ');@output_buffer.append= ( csrf_meta_tag );@output_buff...
+...                               ^
+Function body:           def _app_views_layouts_application_html_erb__29101458_85726320_603212888(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/application";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!DOCTYPE html>
+<html>
+<head>
+  <title>Church Directory and Library</title>
+  ');@output_buffer.append= ( stylesheet_link_tag "style", "mystyle", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/smoothness/jquery-ui.css" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( javascript_include_tag :defaults
+  <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( csrf_meta_tag );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</head>
+<body>
+<div id="wrapper" class="hfeed">
+  <div id="header">
+    <div id="masthead">
+      <div id="branding" role="banner">
+                <h1 id="site-title">
+          <span>
+            <a href="" title="Church Directory and Library" rel="home">Church Directory and Library</a>
+          </span>
+
+        </h1>
+        <div id="site-description">Sharing resources within your church</div>
+
+                </div><!-- #branding -->
+
+      <div id="user_nav">
+');         if current_user 
+@output_buffer.safe_concat('          Logged in as ');@output_buffer.append= ( current_user.name );@output_buffer.safe_concat(' |
+          ');@output_buffer.append= ( link_to "Log out", log_out_path );@output_buffer.safe_concat('
+');         else 
+@output_buffer.safe_concat('          ');@output_buffer.append= ( link_to "Sign up", sign_up_path );@output_buffer.safe_concat(' |
+          ');@output_buffer.append= ( link_to "Log in", log_in_path );@output_buffer.safe_concat('
+');         end 
+@output_buffer.safe_concat('      </div>
+      <div id="access" role="navigation">
+                <div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
+
+                <div class="menu">
+<ul><li class="current_page_item">');@output_buffer.append= ( link_to 'Home', root_url );@output_buffer.safe_concat('</a></li>
+'); if current_user 
+@output_buffer.safe_concat('<li class="page_item page-item-2">');@output_buffer.append= ( link_to 'Profile', user_path(current_user) );@output_buffer.safe_concat('</li>
+<li class="page_item page-item-2">');@output_buffer.append= ( link_to 'Directory', contacts_path );@output_buffer.safe_concat('</li>
+'); if current_user.admin 
+@output_buffer.safe_concat('<li class="page_item page-item-2">');@output_buffer.append= ( link_to 'Admin', users_path );@output_buffer.safe_concat('</li>
+'); end 
+ end 
+@output_buffer.safe_concat('<li class="page_item page-item-2"><a href="#" title="About">About</a></li>
+</ul></div>
+      </div><!-- #access -->
+    </div><!-- #masthead -->
+  </div><!-- #header -->
+
+  <div id="main">
+
+    <div id="container">
+      <div id="content" role="main">
+');@output_buffer.append_if_string=  flash.each do |name, msg| 
+@output_buffer.safe_concat('<div class="ui-widget">
+  <div class="ui-state-highlight ui-corner-all" style="padding: 0 .7em;">
+  ');@output_buffer.append= ( msg );@output_buffer.safe_concat('<br />
+  </div>
+</div>
+'); end 
+@output_buffer.append= ( yield );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('      </div><!-- #content -->
+    </div><!-- #container -->
+
+    <div id="primary" class="widget-area" role="complementary">
+      <ul class="xoxo">
+      ');@output_buffer.append= ( yield :sidebar);@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</ul>
+    </div><!-- #primary .widget-area -->
+
+  </div><!-- #main -->
+
+  <div id="footer" role="contentinfo">
+    <div id="colophon">
+      <div id="site-info">
+        <a href="" title="" rel="home">Sponsors</a>
+      </div><!-- #site-info -->
+    </div><!-- #colophon -->
+  </div><!-- #footer -->
+</div><!-- #wrapper -->
+
+</body>
+</html>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:255:in `module_eval'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:255:in `compile'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:134:in `block in render'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:54:in `instrument'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:127:in `render'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:26:in `render'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:93:in `render'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/vadmin/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:150:in `process_action'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:440:in `_run__732412389__process_action__394863908__callbacks'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:119:in `process'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:41:in `process'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal.rb:138:in `dispatch'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal.rb:178:in `block in action'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:103:in `optimized_each'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:32:in `block in call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:12:in `cache'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:31:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/rack/logger.rb:13:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/application.rb:168:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/application.rb:77:in `method_missing'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+/home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+/home/vadmin/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/vadmin/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/vadmin/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered users/index.html.erb within layouts/application (97.4ms)
+Completed   in 135ms
+
+ActionView::Template::Error (/home/vadmin/Apps/dirlib/app/views/layouts/application.html.erb:7: syntax error, unexpected '<', expecting ')'
+  <%= javascript_include_tag "ht...
+   ^
+/home/vadmin/Apps/dirlib/app/views/layouts/application.html.erb:8: syntax error, unexpected '(', expecting ')'
+...('  ');@output_buffer.append= ( csrf_meta_tag );@output_buff...
+...                               ^):
+    4:   <title>Church Directory and Library</title>
+    5:   <%= stylesheet_link_tag "style", "mystyle", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/smoothness/jquery-ui.css" %>
+    6:   <%= javascript_include_tag :defaults
+    7:   <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js" %>
+    8:   <%= csrf_meta_tag %>
+    9: </head>
+    10: <body>
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-27 16:52:50 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+Rendered users/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 121ms (Views: 27.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 16:52:51 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2011-04-27 16:52:54 -0600
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (1.3ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 3) LIMIT 1
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1[0m
+Rendered users/_profile_sidebar.html.erb (48.5ms)
+Rendered users/show.html.erb within layouts/application (52.3ms)
+Completed 200 OK in 141ms (Views: 55.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-27 16:52:54 -0600
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-27 17:04:17 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+Rendered users/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 109ms (Views: 34.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/3" for 127.0.0.1 at 2011-04-27 17:04:30 -0600
+
+AbstractController::ActionNotFound (The action 'destroy' could not be found for UsersController):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.6ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2011-04-27 17:04:45 -0600
+  Processing by GroupsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.1ms)
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT `groups`.* FROM `groups`[0m
+Rendered groups/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 120ms (Views: 65.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/groups/1" for 127.0.0.1 at 2011-04-27 17:04:52 -0600
+  Processing by GroupsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cXsXnhM6AzDoCsw4BeEtalhWVGFWxWYMugQKccBj0u8=", "id"=>"1"}
+  [1m[35mGroup Load (0.6ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (11.9ms)[0m  BEGIN
+  [1m[36mAREL (41.6ms)[0m  [1mDELETE FROM `groups` WHERE `groups`.`id` = 1[0m
+  [1m[35mSQL (56.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/groups
+Completed 302 Found in 272ms
+
+
+Started GET "/groups" for 127.0.0.1 at 2011-04-27 17:04:52 -0600
+  Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered users/_admin_sidebar.html.erb (1.0ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT `groups`.* FROM `groups`
+Rendered groups/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 49ms (Views: 12.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-04-27 17:05:01 -0600
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContact Load (0.5ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1
+Rendered users/_profile_sidebar.html.erb (37.3ms)
+Rendered contacts/_contact_details.html.erb (2.3ms)
+Rendered users/show.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 98ms (Views: 47.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/1/edit?profile=true" for 127.0.0.1 at 2011-04-27 17:05:04 -0600
+  Processing by ContactsController#edit as HTML
+  Parameters: {"profile"=>"true", "id"=>"1"}
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1[0m
+Rendered users/_profile_sidebar.html.erb (27.2ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT `groups`.* FROM `groups`
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT `groups`.*, `groups`.`id` FROM `groups` INNER JOIN `contact_groups` ON `groups`.id = `contact_groups`.group_id WHERE `groups`.`id` = 2 AND ((`contact_groups`.contact_id = 1)) LIMIT 1[0m
+Rendered contacts/_form.html.erb (110.0ms)
+Rendered contacts/edit.html.erb within layouts/application (151.9ms)
+Completed 200 OK in 219ms (Views: 163.8ms | ActiveRecord: 1.1ms)
+  [1m[35mGroup Load (90.2ms)[0m  SELECT `groups`.* FROM `groups`
+  [1m[36mContactGroup Load (2.6ms)[0m  [1mSELECT `contact_groups`.* FROM `contact_groups`[0m
+  [1m[35mContactGroup Load (2.7ms)[0m  SELECT `contact_groups`.* FROM `contact_groups` WHERE (1)
+  [1m[36mContactGroup Load (36.3ms)[0m  [1mSELECT `contact_groups`.* FROM `contact_groups` WHERE (1)[0m
+  [1m[35mAREL (16.9ms)[0m  DELETE FROM `contact_groups` WHERE (1)
+  [1m[36mContactGroup Load (21.3ms)[0m  [1mSELECT `contact_groups`.* FROM `contact_groups` WHERE (1)[0m
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-27 17:21:54 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+Rendered users/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 109ms (Views: 64.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/groups/new" for 127.0.0.1 at 2011-04-27 17:21:57 -0600
+  Processing by GroupsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered groups/_form.html.erb (4.4ms)
+Rendered groups/new.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 105ms (Views: 62.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/groups" for 127.0.0.1 at 2011-04-27 17:22:25 -0600
+  Processing by GroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cXsXnhM6AzDoCsw4BeEtalhWVGFWxWYMugQKccBj0u8=", "group"=>{"name"=>"Acacia"}, "commit"=>"Create Group"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  BEGIN
+  [1m[36mSQL (14.2ms)[0m  [1mdescribe `groups`[0m
+  [1m[35mAREL (58.9ms)[0m  INSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('Acacia', '2011-04-27 23:22:26', '2011-04-27 23:22:26')
+  [1m[36mSQL (27.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/groups/3
+Completed 302 Found in 155ms
+
+
+Started GET "/groups/3" for 127.0.0.1 at 2011-04-27 17:22:26 -0600
+  Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mGroup Load (20.6ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 3 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered groups/show.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 86ms (Views: 31.7ms | ActiveRecord: 20.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-04-27 17:22:33 -0600
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1[0m
+Rendered users/_profile_sidebar.html.erb (19.1ms)
+Rendered contacts/_contact_details.html.erb (1.1ms)
+Rendered users/show.html.erb within layouts/application (94.8ms)
+Completed 200 OK in 149ms (Views: 100.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts/1/edit?profile=true" for 127.0.0.1 at 2011-04-27 17:22:35 -0600
+  Processing by ContactsController#edit as HTML
+  Parameters: {"profile"=>"true", "id"=>"1"}
+  [1m[35mContact Load (0.2ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1
+Rendered users/_profile_sidebar.html.erb (26.3ms)
+  [1m[36mGroup Load (0.6ms)[0m  [1mSELECT `groups`.* FROM `groups`[0m
+  [1m[35mGroup Load (0.3ms)[0m  SELECT `groups`.*, `groups`.`id` FROM `groups` INNER JOIN `contact_groups` ON `groups`.id = `contact_groups`.group_id WHERE `groups`.`id` = 2 AND ((`contact_groups`.contact_id = 1)) LIMIT 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT `groups`.*, `groups`.`id` FROM `groups` INNER JOIN `contact_groups` ON `groups`.id = `contact_groups`.group_id WHERE `groups`.`id` = 3 AND ((`contact_groups`.contact_id = 1)) LIMIT 1[0m
+Rendered contacts/_form.html.erb (88.6ms)
+Rendered contacts/edit.html.erb within layouts/application (119.9ms)
+Completed 200 OK in 224ms (Views: 124.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/contacts/1" for 127.0.0.1 at 2011-04-27 17:22:44 -0600
+  Processing by ContactsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cXsXnhM6AzDoCsw4BeEtalhWVGFWxWYMugQKccBj0u8=", "contact"=>{"gender"=>"Male", "cell_phone"=>"5109021234", "work_phone"=>"", "address_line_1"=>"818 Arnold", "address_line_2"=>"", "city"=>"Davis", "state"=>"CA", "zip"=>"95618", "birthday"=>"1980-01-10 00:00:00 UTC", "newcomer"=>"0", "member"=>"1", "staff"=>"0", "elder"=>"0", "deacon"=>"0", "group_ids"=>["2", "3"], "website"=>"", "about"=>"", "user_id"=>"1"}, "commit"=>"Update Contact", "id"=>"1"}
+  [1m[35mContact Load (0.2ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (1.4ms)[0m  BEGIN
+  [1m[36mGroup Load (53.7ms)[0m  [1mSELECT `groups`.* FROM `groups` WHERE `groups`.`id` IN (2, 3)[0m
+  [1m[35mGroup Load (1.3ms)[0m  SELECT `groups`.* FROM `groups` INNER JOIN `contact_groups` ON `groups`.id = `contact_groups`.group_id WHERE ((`contact_groups`.contact_id = 1))
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `contact_groups`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `contact_groups` (`contact_id`, `group_id`, `created_at`, `updated_at`) VALUES (1, 2, '2011-04-27 23:22:45', '2011-04-27 23:22:45')
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `contact_groups` (`contact_id`, `group_id`, `created_at`, `updated_at`) VALUES (1, 3, '2011-04-27 23:22:45', '2011-04-27 23:22:45')[0m
+  [1m[35mContact Load (43.9ms)[0m  SELECT `contacts`.`id` FROM `contacts` WHERE (`contacts`.`email` = BINARY 'johannchen@gmail.com') AND (`contacts`.id <> 1) LIMIT 1
+  [1m[36mSQL (2.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 256ms
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-04-27 17:22:45 -0600
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1[0m
+Rendered users/_profile_sidebar.html.erb (20.8ms)
+Rendered contacts/_contact_details.html.erb (1.0ms)
+Rendered users/show.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 99ms (Views: 29.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-27 17:22:57 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+Rendered users/index.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 155ms (Views: 32.8ms | ActiveRecord: 101.6ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2011-04-27 17:23:19 -0600
+  Processing by GroupsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.0ms)
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT `groups`.* FROM `groups`[0m
+Rendered groups/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 48ms (Views: 14.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/groups/3" for 127.0.0.1 at 2011-04-27 17:23:50 -0600
+  Processing by GroupsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cXsXnhM6AzDoCsw4BeEtalhWVGFWxWYMugQKccBj0u8=", "id"=>"3"}
+  [1m[35mGroup Load (0.1ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 3 LIMIT 1
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed   in 149ms
+
+NoMethodError (undefined method `delete_all' for #<Group:0xa4119c8>):
+  app/controllers/groups_controller.rb:53:in `destroy'
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.4ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2011-04-27 17:25:14 -0600
+  Processing by GroupsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.0ms)
+  [1m[36mGroup Load (0.6ms)[0m  [1mSELECT `groups`.* FROM `groups`[0m
+Rendered groups/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 76ms (Views: 13.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/groups/3" for 127.0.0.1 at 2011-04-27 17:25:24 -0600
+  Processing by GroupsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cXsXnhM6AzDoCsw4BeEtalhWVGFWxWYMugQKccBj0u8=", "id"=>"3"}
+  [1m[35mGroup Load (4.6ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 3 LIMIT 1
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (1.6ms)[0m  BEGIN
+  [1m[36mAREL (0.5ms)[0m  [1mDELETE FROM `contact_groups` WHERE ((group_id = 3))[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM `groups` WHERE `groups`.`id` = 3
+  [1m[36mSQL (2.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/groups
+Completed 302 Found in 181ms
+
+
+Started GET "/groups" for 127.0.0.1 at 2011-04-27 17:25:24 -0600
+  Processing by GroupsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (2.3ms)
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT `groups`.* FROM `groups`[0m
+Rendered groups/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 56ms (Views: 14.9ms | ActiveRecord: 0.8ms)
+  [1m[35mContactGroup Load (1.5ms)[0m  SELECT `contact_groups`.* FROM `contact_groups` WHERE (3)
+  [1m[36mContactGroup Load (36.0ms)[0m  [1mSELECT `contact_groups`.* FROM `contact_groups` WHERE (3)[0m

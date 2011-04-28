@@ -1,0 +1,14 @@
+<% content_for :sidebar do %>
+  <h3 class="widget-title">Users</h3>   
+    <ul>
+        <li><%= link_to 'Show users', users_path %></li>
+        <li><%= link_to 'Add user', new_user_path %></li>
+    </ul>
+  <br />
+  <h3 class="widget-title">Groups</h3>   
+    <ul>
+        <li><%= link_to 'Show groups', groups_path %></li>
+        <li><%= link_to 'Add group', new_group_path %></li>
+    </ul>
+<% end %>
+
