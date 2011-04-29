@@ -3,6 +3,7 @@ class UserMailer < ActionMailer::Base
 
   def registration_confirmation(user)
     @user = user
+    @url = "http://gracedimension.com"
     mail(:to => "#{user.name} <#{user.email}>", :subject => "Registered")
   end
 end

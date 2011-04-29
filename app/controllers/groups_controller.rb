@@ -57,9 +57,4 @@ class GroupsController < ApplicationController
     end
   end
 
-  def deactivate
-  end
-
-  def activate
-  end
 end

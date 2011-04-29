@@ -6,13 +6,19 @@ Dirlib::Application.routes.draw do
   
   root :to => "home#index"
 
-  resources :users do
+  resources :sessions
+  resources :users
+
+  resources :groups do
     resources :contacts
   end
 
-  resources :sessions
-  resources :contacts
-  resources :groups
+  resources :contacts do
+    put 'remove', :on => :member
+    put 'activate', :on => :member
+    get 'removed', :on => :collection
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

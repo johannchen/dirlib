@@ -1,10 +1,6 @@
-<%= render 'directory_sidebar' %>
+<%= render 'users/admin_sidebar' %>
 
-<h1>Directory</h1>
-
-<% if params[:group_id] %>
-<h2><%= @group.name %></h2>
-<% end %>
+<h1>Removed Contacts</h1>
 
 <table>
   <tr>
@@ -17,10 +13,11 @@
     <td><%= contact.email%></td>
     <td><%= number_to_phone(contact.cell_phone)%></td>
     <td><%= link_to 'Show', contact %>
-    <% if can? :update, Contact and contact.user.nil? %>
-      | <%= link_to 'Remove', remove_contact_path(contact), :method => :put %>
+    <% if can? :update, Contact %>
+      | <%= link_to 'Activate', activate_contact_path(contact), :method => :put %>
     <% end %>
     </td>
   </tr>
 <% end %>
 </table>
+

@@ -521,11 +521,11 @@ div.menu li {
 	font-size: 12px;
 	font-weight: bold;
 	line-height: 18px;
-	padding: 9px 24px;
+	padding: 9px 15px;
 }
 #content tr td {
 	border-top: 1px solid #e7e7e7;
-	padding: 6px 24px;
+	padding: 6px 15px;
 }
 #content tr.odd td {
 	background: #f2f7fc;

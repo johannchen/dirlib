@@ -2,8 +2,9 @@ class User < ActiveRecord::Base
   has_one :contact
   has_many :relationships
   has_many :contacts, :through => :relationships
+  has_many :active_contacts, :through => :relationships, :class_name => "Contact", :source => :contact, :conditions => {:active => true}
 
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation, :admin
 
   attr_accessor :password
   before_save :encrypt_password
@@ -30,4 +31,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  def new_random_password
+    self.password = ActiveSupport::SecureRandom.base64(6)
+    self.password_confirmation = self.password
+  end
 end

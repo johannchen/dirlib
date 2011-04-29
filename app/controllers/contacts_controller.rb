@@ -4,8 +4,11 @@ class ContactsController < ApplicationController
   def index
     if params[:search]
       @contacts = Contact.search(params[:search])
+    elsif params[:group_id]
+      @group = Group.find(params[:group_id])
+      @contacts = @group.contacts
     else
-      @contacts = current_user.contacts 
+      @contacts = current_user.active_contacts 
     end
   end
 
@@ -49,4 +52,23 @@ class ContactsController < ApplicationController
     end
   end
 
+  # set contact to inactive rather than delete
+  def remove
+    @contact = Contact.find(params[:id])
+    if @contact.update_attribute :active, false
+      redirect_to contacts_url, :notice => "Contact has been successfully removed."
+    end
+  end
+
+  # list of removed contacts
+  def removed
+    @contacts = Contact.where(:active => false).order(:name)
+  end
+
+  def activate
+    @contact = Contact.find(params[:id])
+    if @contact.update_attribute :active, true
+      redirect_to contacts_url, :notice => "Contact has been successfully activated."
+    end
+  end
 end

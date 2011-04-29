@@ -1,3 +1,11 @@
-<h1>Sign Up</h1>
+<h1>New User</h1>
 
-<%= render 'form' %>
+<%= form_for @user do |f| %> 
+  <%= collection_select(:contact, :id, @contacts, :id, :name_email) %>
+  <% if current_user.admin %>
+  <div class="field">
+    <%= f.check_box :admin %> <%= f.label :admin %>
+  </div>
+  <% end %>
+  <p class="button"><%= f.submit %></p>
+<% end %>

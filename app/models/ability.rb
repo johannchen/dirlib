@@ -6,6 +6,7 @@ class Ability
       can :manage, :all
     else
       can :manage, User, :id => user.id 
+      can :manage, Contact, :user_id => user.id
       can :read, Contact
       can :create, Contact
       can :update, Contact, :id => user.contact_ids 

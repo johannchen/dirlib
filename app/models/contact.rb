@@ -27,6 +27,9 @@ class Contact < ActiveRecord::Base
     a.html_safe
   end
 
+  def name_email
+    name + " - " + email
+  end
   #def birthday
   #  birthday.to_date if birthday
   #end

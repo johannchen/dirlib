@@ -9067,3 +9067,1447 @@ Rendered groups/index.html.erb within layouts/application (12.1ms)
 Completed 200 OK in 56ms (Views: 14.9ms | ActiveRecord: 0.8ms)
   [1m[35mContactGroup Load (1.5ms)[0m  SELECT `contact_groups`.* FROM `contact_groups` WHERE (3)
   [1m[36mContactGroup Load (36.0ms)[0m  [1mSELECT `contact_groups`.* FROM `contact_groups` WHERE (3)[0m
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-28 10:43:27 -0600
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 51ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log_in" for 127.0.0.1 at 2011-04-28 10:45:32 -0600
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 56ms (Views: 55.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-28 10:45:41 -0600
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uAkSOLN5paFUY2Wu+7QfAlYf3JQdicK/ITJQrH7usBo=", "email"=>"johannchen@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mSQL (65.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (90.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'johannchen@gmail.com' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 954ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-28 10:45:43 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (36.9ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (85.3ms)
+Completed 200 OK in 94ms (Views: 56.7ms | ActiveRecord: 36.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 10:45:53 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+Rendered users/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 128ms (Views: 59.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-04-28 10:46:36 -0600
+  Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_form.html.erb (86.7ms)
+Rendered users/new.html.erb within layouts/application (101.6ms)
+Completed 200 OK in 197ms (Views: 170.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 11:01:52 -0600
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered users/_admin_sidebar.html.erb (1.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users`
+Rendered users/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 80ms (Views: 21.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2011-04-28 11:48:58 -0600
+  Processing by ContactsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_87398350_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+Rendered contacts/_directory_sidebar.html.erb (1.9ms)
+  [1m[35mContact Load (77.6ms)[0m  SELECT `contacts`.* FROM `contacts` INNER JOIN `relationships` ON `contacts`.id = `relationships`.contact_id WHERE ((`relationships`.user_id = 1))
+Rendered contacts/index.html.erb within layouts/application (186.2ms)
+Completed 200 OK in 475ms (Views: 145.0ms | ActiveRecord: 77.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 11:49:09 -0600
+
+SyntaxError (/home/vadmin/Apps/dirlib/app/controllers/users_controller.rb:8: syntax error, unexpected keyword_and, expecting ')'
+    @contacts = Contact.where(user_id is nil and email is not nil)
+                                                ^
+/home/vadmin/Apps/dirlib/app/controllers/users_controller.rb:8: syntax error, unexpected keyword_nil, expecting '('
+    @contacts = Contact.where(user_id is nil and email is not nil)
+                                                                 ^
+/home/vadmin/Apps/dirlib/app/controllers/users_controller.rb:39: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.2ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.7ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 11:51:54 -0600
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered users/_admin_sidebar.html.erb (2.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users`
+Rendered users/index.html.erb within layouts/application (38.2ms)
+Completed 200 OK in 85ms (Views: 49.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-04-28 11:52:03 -0600
+  Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (0.7ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (user_id is nil and email is not nil)
+Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'nil and email is not nil)' at line 1: SELECT `contacts`.* FROM `contacts` WHERE (user_id is nil and email is not nil)
+Rendered users/new.html.erb within layouts/application (45.5ms)
+Completed   in 107ms
+
+ActionView::Template::Error (Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'nil and email is not nil)' at line 1: SELECT `contacts`.* FROM `contacts` WHERE (user_id is nil and email is not nil)):
+    1: <h1>New User</h1>
+    2: 
+    3: <%= form_for @user do |f| %> 
+    4:   <%= collection_select(:contact, :id, @contacts, :id, :name_email) %>
+    5:   <% if current_user.admin %>
+    6:   <div class="field">
+    7:     <%= f.check_box :admin %> <%= f.label :admin %>
+  app/views/users/new.html.erb:4:in `block in _app_views_users_new_html_erb___563932658_89167710__8170958'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___563932658_89167710__8170958'
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[36mContact Load (0.3ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (user_id is nil and email is not nil)[0m
+Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'nil and email is not nil)' at line 1: SELECT `contacts`.* FROM `contacts` WHERE (user_id is nil and email is not nil)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.1ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-04-28 11:52:52 -0600
+  Processing by UsersController#new as HTML
+  [1m[35mUser Load (3.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContact Load (0.6ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (user_id is null and email is not null)[0m
+Rendered users/new.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 109ms (Views: 27.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-04-28 11:53:57 -0600
+  Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (user_id is null and email is not null)[0m
+Rendered users/new.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 99ms (Views: 25.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 12:26:34 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+Rendered users/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 99ms (Views: 13.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-04-28 12:26:38 -0600
+  Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContact Load (66.9ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (user_id is null and email is not null) ORDER BY name[0m
+Rendered users/new.html.erb within layouts/application (92.1ms)
+Completed 200 OK in 169ms (Views: 34.0ms | ActiveRecord: 67.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-04-28 12:26:46 -0600
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uAkSOLN5paFUY2Wu+7QfAlYf3JQdicK/ITJQrH7usBo=", "contact"=>{"id"=>"5"}, "user"=>{"admin"=>"0"}, "commit"=>"Create User"}
+WARNING: Can't mass-assign protected attributes: admin
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContact Load (0.4ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 5 LIMIT 1[0m
+Completed   in 124ms
+
+NoMethodError (undefined method `new_random_password' for #<User:0xaa7ac4c>):
+  app/controllers/users_controller.rb:20:in `create'
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.1ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 12:28:38 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (2.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+Rendered users/index.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 139ms (Views: 46.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-04-28 12:28:42 -0600
+  Processing by UsersController#new as HTML
+  [1m[35mUser Load (3.9ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (user_id is null and email is not null) ORDER BY name[0m
+Rendered users/new.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 158ms (Views: 27.6ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-04-28 12:29:01 -0600
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uAkSOLN5paFUY2Wu+7QfAlYf3JQdicK/ITJQrH7usBo=", "contact"=>{"id"=>"5"}, "user"=>{"admin"=>"0"}, "commit"=>"Create User"}
+WARNING: Can't mass-assign protected attributes: admin
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 5 LIMIT 1[0m
+  [1m[35mSQL (19.9ms)[0m  BEGIN
+  [1m[36mUser Load (39.1ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (`users`.`email` = BINARY 'chudeng@test.com') LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  describe `users`
+  [1m[36mAREL (59.5ms)[0m  [1mINSERT INTO `users` (`email`, `password_hash`, `password_salt`, `created_at`, `updated_at`, `name`, `admin`) VALUES ('chudeng@test.com', '$2a$10$yVJ2w2RLihrnNSMHvUhXSuHkeY.9rJraZOuecraRRTzIQaXqqTjPq', '$2a$10$yVJ2w2RLihrnNSMHvUhXSu', '2011-04-28 18:29:01', '2011-04-28 18:29:01', 'Chu Deng', NULL)[0m
+  [1m[35mSQL (30.3ms)[0m  COMMIT
+Rendered user_mailer/registration_confirmation.text.erb (41.3ms)
+Completed   in 653ms
+
+ActionView::Template::Error (undefined local variable or method `url' for #<#<Class:0x9b3a8f4>:0x9b1d038>):
+    5: Your login is: <%= @user.email %>
+    6: Your password is: <%= @user.password %>
+    7: 
+    8: To login to the site, just follow this link: <%= url %>
+    9: 
+    10: Please change the password after you login. Have a great day!
+  app/views/user_mailer/registration_confirmation.text.erb:8:in `_app_views_user_mailer_registration_confirmation_text_erb___79303761_81391560__8170958'
+  app/mailers/user_mailer.rb:7:in `registration_confirmation'
+  app/controllers/users_controller.rb:22:in `create'
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.4ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 12:29:40 -0600
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered users/_admin_sidebar.html.erb (1.0ms)
+  [1m[35mUser Load (3.5ms)[0m  SELECT `users`.* FROM `users`
+Rendered users/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 102ms (Views: 15.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2011-04-28 12:30:04 -0600
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContact Load (0.4ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 5) LIMIT 1[0m
+  [1m[35mContact Load (0.3ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1
+Rendered users/_profile_sidebar.html.erb (21.8ms)
+Rendered users/show.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 136ms (Views: 62.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/contacts/1/edit?profile=true" for 127.0.0.1 at 2011-04-28 12:30:08 -0600
+  Processing by ContactsController#edit as HTML
+  Parameters: {"profile"=>"true", "id"=>"1"}
+  [1m[36mContact Load (0.3ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1[0m
+Rendered users/_profile_sidebar.html.erb (31.3ms)
+  [1m[35mGroup Load (31.5ms)[0m  SELECT `groups`.* FROM `groups`
+  [1m[36mGroup Load (20.3ms)[0m  [1mSELECT `groups`.*, `groups`.`id` FROM `groups` INNER JOIN `contact_groups` ON `groups`.id = `contact_groups`.group_id WHERE `groups`.`id` = 2 AND ((`contact_groups`.contact_id = 1)) LIMIT 1[0m
+Rendered contacts/_form.html.erb (166.3ms)
+Rendered contacts/edit.html.erb within layouts/application (231.7ms)
+Completed 200 OK in 372ms (Views: 186.1ms | ActiveRecord: 52.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 12:30:18 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+Rendered users/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 54ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/5/edit" for 127.0.0.1 at 2011-04-28 12:30:20 -0600
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (1.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1
+Rendered users/_profile_sidebar.html.erb (43.8ms)
+Rendered users/_form.html.erb (5.4ms)
+Rendered users/edit.html.erb within layouts/application (55.0ms)
+Completed 200 OK in 145ms (Views: 88.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-04-28 12:30:32 -0600
+  Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (user_id is null and email is not null) ORDER BY name
+Rendered users/new.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 71ms (Views: 27.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-04-28 12:30:55 -0600
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uAkSOLN5paFUY2Wu+7QfAlYf3JQdicK/ITJQrH7usBo=", "contact"=>{"id"=>"7"}, "user"=>{"admin"=>"0"}, "commit"=>"Create User"}
+WARNING: Can't mass-assign protected attributes: admin
+  [1m[36mUser Load (3.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (0.5ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 7 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (2.5ms)[0m  SELECT `users`.`id` FROM `users` WHERE (`users`.`email` = BINARY 'may@gmail.com') LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `users` (`email`, `password_hash`, `password_salt`, `created_at`, `updated_at`, `name`, `admin`) VALUES ('may@gmail.com', '$2a$10$TW6JqgsTVMPGYGXZGJQ9YuzdkL1P63zP3sVlW6ZLHlh0EhizRB6qS', '$2a$10$TW6JqgsTVMPGYGXZGJQ9Yu', '2011-04-28 18:30:56', '2011-04-28 18:30:56', 'May Deng', NULL)
+  [1m[36mSQL (2.3ms)[0m  [1mCOMMIT[0m
+Rendered user_mailer/registration_confirmation.text.erb (0.4ms)
+
+Sent mail to gracedimension@gmail.com (4792ms)
+Date: Thu, 28 Apr 2011 12:30:56 -0600
+From: gracedimension@gmail.com
+To: gracedimension@gmail.com
+Message-ID: <4db9b26026cb2_d24514c44a3324@ubu1004.mail>
+Subject: ["may@gmail.com"] Registered
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+May Deng
+
+Welcome to church directory!
+
+Your login is: may@gmail.com
+Your password is: xD8ni9i/
+
+To login to the site, just follow this link: http://gracedimension.com
+
+Please change the password after you login. Have a great day!
+Redirected to http://localhost:3000/users
+Completed 302 Found in 5049ms
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 12:31:00 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+Rendered users/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 47ms (Views: 16.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/log_out" for 127.0.0.1 at 2011-04-28 12:32:52 -0600
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-28 12:32:53 -0600
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 122ms (Views: 120.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log_in" for 127.0.0.1 at 2011-04-28 12:33:12 -0600
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 59ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-28 12:33:29 -0600
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uAkSOLN5paFUY2Wu+7QfAlYf3JQdicK/ITJQrH7usBo=", "email"=>"may@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mUser Load (30.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'may@gmail.com' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 400ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-28 12:33:29 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 6 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (74.7ms)
+Completed 200 OK in 94ms (Views: 90.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2011-04-28 12:33:44 -0600
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 6 LIMIT 1[0m
+  [1m[35mRelationship Load (32.1ms)[0m  SELECT DISTINCT `relationships`.contact_id FROM `relationships` WHERE (`relationships`.user_id = 6)
+  [1m[36mContact Load (0.5ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 6) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 6) LIMIT 1
+Rendered users/_profile_sidebar.html.erb (3.3ms)
+Rendered users/show.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 419ms (Views: 111.4ms | ActiveRecord: 32.6ms)
+  [1m[36mUser Load (39.9ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (name = 'May Deng')[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT `users`.* FROM `users` LIMIT 1
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1[0m
+  [1m[35mContact Load (4.9ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (name = 'May Deng')
+
+
+Started GET "/log_out" for 127.0.0.1 at 2011-04-28 12:47:34 -0600
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-28 12:47:35 -0600
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (57.2ms)
+Completed 200 OK in 95ms (Views: 93.9ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (name = 'May Deng')[0m
+  [1m[35mSQL (231.8ms)[0m  SHOW TABLES
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 6 LIMIT 1[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 6) LIMIT 1
+  [1m[36mContact Load (1.4ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (name = 'May Deng')[0m
+  [1m[35mContact Load (0.4ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 7 LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mContact Load (95.1ms)[0m  SELECT `contacts`.`id` FROM `contacts` WHERE (`contacts`.`email` = BINARY 'may@gmail.com') AND (`contacts`.id <> 7) LIMIT 1
+  [1m[36mAREL (33.7ms)[0m  [1mUPDATE `contacts` SET `user_id` = 6, `updated_at` = '2011-04-28 18:52:33' WHERE `contacts`.`id` = 7[0m
+  [1m[35mSQL (31.6ms)[0m  COMMIT
+
+
+Started GET "/log_in" for 127.0.0.1 at 2011-04-28 12:53:07 -0600
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (140.2ms)
+Completed 200 OK in 189ms (Views: 188.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-28 12:53:14 -0600
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uAkSOLN5paFUY2Wu+7QfAlYf3JQdicK/ITJQrH7usBo=", "email"=>"johannchen@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (12.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'johannchen@gmail.com' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 194ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-28 12:53:15 -0600
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 12:53:18 -0600
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered users/_admin_sidebar.html.erb (1.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users`
+Rendered users/index.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 137ms (Views: 69.0ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-04-28 12:53:30 -0600
+  Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (20.6ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (user_id is null and email is not null) ORDER BY name
+Rendered users/new.html.erb within layouts/application (44.9ms)
+Completed 200 OK in 140ms (Views: 45.3ms | ActiveRecord: 20.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-04-28 12:53:45 -0600
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uAkSOLN5paFUY2Wu+7QfAlYf3JQdicK/ITJQrH7usBo=", "contact"=>{"id"=>"4"}, "user"=>{"admin"=>"0"}, "commit"=>"Create User"}
+WARNING: Can't mass-assign protected attributes: admin
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (0.3ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 4 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.`id` FROM `users` WHERE (`users`.`email` = BINARY 'adam@gmail.com') LIMIT 1
+  [1m[36mSQL (36.4ms)[0m  [1mdescribe `users`[0m
+  [1m[35mAREL (7.5ms)[0m  INSERT INTO `users` (`email`, `password_hash`, `password_salt`, `created_at`, `updated_at`, `name`, `admin`) VALUES ('adam@gmail.com', '$2a$10$zTjDAW/dS.TEfCkkO5C7QOFfBVTGR9tJID5rQakd/ucb9gMxENlyC', '$2a$10$zTjDAW/dS.TEfCkkO5C7QO', '2011-04-28 18:53:46', '2011-04-28 18:53:46', 'Adam Chen', NULL)
+  [1m[36mSQL (6.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mContact Load (0.4ms)[0m  [1mSELECT `contacts`.`id` FROM `contacts` WHERE (`contacts`.`email` = BINARY 'adam@gmail.com') AND (`contacts`.id <> 4) LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE `contacts` SET `user_id` = 7, `updated_at` = '2011-04-28 18:53:46' WHERE `contacts`.`id` = 4
+  [1m[36mSQL (2.2ms)[0m  [1mCOMMIT[0m
+Rendered user_mailer/registration_confirmation.text.erb (0.4ms)
+
+Sent mail to gracedimension@gmail.com (1798ms)
+Date: Thu, 28 Apr 2011 12:53:46 -0600
+From: gracedimension@gmail.com
+To: gracedimension@gmail.com
+Message-ID: <4db9b7ba3f19d_d245640fd2333cd@ubu1004.mail>
+Subject: ["adam@gmail.com"] Registered
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Adam Chen
+
+Welcome to church directory!
+
+Your login is: adam@gmail.com
+Your password is: ctjRRivs
+
+To login to the site, just follow this link: http://gracedimension.com
+
+Please change the password after you login. Have a great day!
+Redirected to http://localhost:3000/users
+Completed 302 Found in 2125ms
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 12:53:48 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (29.6ms)
+  [1m[36mUser Load (2.5ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+Rendered users/index.html.erb within layouts/application (43.7ms)
+Completed 200 OK in 77ms (Views: 44.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/log_out" for 127.0.0.1 at 2011-04-28 12:54:30 -0600
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-28 12:54:31 -0600
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log_in" for 127.0.0.1 at 2011-04-28 12:54:34 -0600
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 29ms (Views: 28.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-28 12:54:44 -0600
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uAkSOLN5paFUY2Wu+7QfAlYf3JQdicK/ITJQrH7usBo=", "email"=>"adam@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'adam@gmail.com' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 190ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-28 12:54:44 -0600
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (37.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (63.7ms)
+Completed 200 OK in 73ms (Views: 35.0ms | ActiveRecord: 37.7ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2011-04-28 12:54:47 -0600
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1[0m
+  [1m[35mRelationship Load (6.2ms)[0m  SELECT DISTINCT `relationships`.contact_id FROM `relationships` WHERE (`relationships`.user_id = 7)
+  [1m[36mContact Load (0.4ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 7) LIMIT 1
+Rendered users/_profile_sidebar.html.erb (21.7ms)
+Rendered contacts/_contact_details.html.erb (1.0ms)
+Rendered users/show.html.erb within layouts/application (65.5ms)
+Completed 200 OK in 187ms (Views: 79.2ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/contacts/4/edit?profile=true" for 127.0.0.1 at 2011-04-28 12:54:59 -0600
+  Processing by ContactsController#edit as HTML
+  Parameters: {"profile"=>"true", "id"=>"4"}
+  [1m[36mContact Load (0.3ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT DISTINCT `relationships`.contact_id FROM `relationships` WHERE (`relationships`.user_id = 7)[0m
+Completed   in 139ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-28 12:55:00 -0600
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+Rendered home/index.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 28ms (Views: 27.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2011-04-28 12:55:06 -0600
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT DISTINCT `relationships`.contact_id FROM `relationships` WHERE (`relationships`.user_id = 7)[0m
+  [1m[35mContact Load (0.1ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 7) LIMIT 1[0m
+Rendered users/_profile_sidebar.html.erb (20.4ms)
+Rendered contacts/_contact_details.html.erb (0.8ms)
+Rendered users/show.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 119ms (Views: 30.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2011-04-28 12:59:03 -0600
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1[0m
+  [1m[35mRelationship Load (0.3ms)[0m  SELECT DISTINCT `relationships`.contact_id FROM `relationships` WHERE (`relationships`.user_id = 7)
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 7) LIMIT 1
+Rendered users/_profile_sidebar.html.erb (26.9ms)
+Rendered contacts/_contact_details.html.erb (1.1ms)
+Rendered users/show.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 154ms (Views: 36.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/contacts/4/edit?profile=true" for 127.0.0.1 at 2011-04-28 12:59:06 -0600
+  Processing by ContactsController#edit as HTML
+  Parameters: {"profile"=>"true", "id"=>"4"}
+  [1m[36mContact Load (0.4ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT DISTINCT `relationships`.contact_id FROM `relationships` WHERE (`relationships`.user_id = 7)[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 7) LIMIT 1
+Rendered users/_profile_sidebar.html.erb (7.7ms)
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT `groups`.* FROM `groups`[0m
+  [1m[35mGroup Load (2.5ms)[0m  SELECT `groups`.*, `groups`.`id` FROM `groups` INNER JOIN `contact_groups` ON `groups`.id = `contact_groups`.group_id WHERE `groups`.`id` = 2 AND ((`contact_groups`.contact_id = 4)) LIMIT 1
+Rendered contacts/_form.html.erb (83.2ms)
+Rendered contacts/edit.html.erb within layouts/application (139.0ms)
+Completed 200 OK in 257ms (Views: 151.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/7/edit" for 127.0.0.1 at 2011-04-28 13:00:20 -0600
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT DISTINCT `relationships`.contact_id FROM `relationships` WHERE (`relationships`.user_id = 7)[0m
+  [1m[35mContact Load (3.8ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 7) LIMIT 1
+Rendered users/_profile_sidebar.html.erb (66.5ms)
+Rendered users/_form.html.erb (6.0ms)
+Rendered users/edit.html.erb within layouts/application (82.3ms)
+Completed 200 OK in 179ms (Views: 95.3ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/log_out" for 127.0.0.1 at 2011-04-28 13:00:23 -0600
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-28 13:00:23 -0600
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 12ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log_in" for 127.0.0.1 at 2011-04-28 14:22:05 -0600
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (36.4ms)
+Completed 200 OK in 103ms (Views: 102.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-28 14:22:14 -0600
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uAkSOLN5paFUY2Wu+7QfAlYf3JQdicK/ITJQrH7usBo=", "email"=>"johannchen@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (164.8ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'johannchen@gmail.com' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 653ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-28 14:22:15 -0600
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (55.4ms)
+Completed 200 OK in 99ms (Views: 98.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 14:22:21 -0600
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered users/_admin_sidebar.html.erb (1.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users`
+Rendered users/index.html.erb within layouts/application (57.6ms)
+Completed 200 OK in 192ms (Views: 102.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/7" for 127.0.0.1 at 2011-04-28 14:40:42 -0600
+  Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uAkSOLN5paFUY2Wu+7QfAlYf3JQdicK/ITJQrH7usBo=", "id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 7) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mContact Load (22.6ms)[0m  [1mSELECT `contacts`.`id` FROM `contacts` WHERE (`contacts`.`email` = BINARY 'adam@gmail.com') AND (`contacts`.id <> 4) LIMIT 1[0m
+  [1m[35mAREL (45.3ms)[0m  UPDATE `contacts` SET `user_id` = NULL, `updated_at` = '2011-04-28 20:40:43' WHERE `contacts`.`id` = 4
+  [1m[36mSQL (38.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (9.3ms)[0m  [1mDELETE FROM `users` WHERE `users`.`id` = 7[0m
+  [1m[35mSQL (16.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/users
+Completed 302 Found in 305ms
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 14:40:43 -0600
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered users/_admin_sidebar.html.erb (1.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users`
+Rendered users/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 80ms (Views: 15.6ms | ActiveRecord: 133.5ms)
+  [1m[36mUser Load (3.6ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  [1m[35mContact Load (20.8ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (7)
+  [1m[36mContact Load (1.8ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (user_id = 7)[0m
+
+
+Started GET "/contacts" for 127.0.0.1 at 2011-04-28 14:42:40 -0600
+  Processing by ContactsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_84079580_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+Rendered contacts/_directory_sidebar.html.erb (3.7ms)
+  [1m[35mContact Load (45.2ms)[0m  SELECT `contacts`.* FROM `contacts` INNER JOIN `relationships` ON `contacts`.id = `relationships`.contact_id WHERE ((`relationships`.user_id = 1))
+Rendered contacts/index.html.erb within layouts/application (252.6ms)
+Completed 200 OK in 518ms (Views: 251.7ms | ActiveRecord: 45.5ms)
+  [1m[36mSQL (128.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (9.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateUsers (20110419001050)
+Migrating to AddNameToUsers (20110419171900)
+Migrating to CreateContactsTable (20110419201454)
+Migrating to CreateRelationships (20110420234431)
+Migrating to AddColumnsToContacts (20110421182956)
+Migrating to CreateGroups (20110426001146)
+Migrating to CreateContactGroups (20110426001312)
+Migrating to AddAdminToUsers (20110426224827)
+Migrating to AddActiveToContacts (20110428204531)
+  [1m[35mSQL (367.6ms)[0m  ALTER TABLE `contacts` ADD `active` tinyint(1) DEFAULT 1
+  [1m[36mSQL (42.6ms)[0m  [1mALTER TABLE `contacts` DROP `photo_file_name`[0m
+  [1m[35mSQL (35.3ms)[0m  ALTER TABLE `contacts` DROP `photo_content_type`
+  [1m[36mSQL (15.8ms)[0m  [1mALTER TABLE `contacts` DROP `photo_fingerprint`[0m
+  [1m[35mSQL (14.7ms)[0m  ALTER TABLE `contacts` DROP `photo_file_size`
+  [1m[36mSQL (15.0ms)[0m  [1mALTER TABLE `contacts` DROP `photo_updated_at`[0m
+  [1m[35mSQL (33.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20110428204531')
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  describe `contact_groups`
+  [1m[36mSQL (1.7ms)[0m  [1mSHOW KEYS FROM `contact_groups`[0m
+  [1m[35mSQL (5.3ms)[0m  describe `contacts`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `contacts`[0m
+  [1m[35mSQL (0.8ms)[0m  describe `groups`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `groups`[0m
+  [1m[35mSQL (0.8ms)[0m  describe `relationships`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `relationships`[0m
+  [1m[35mSQL (0.9ms)[0m  describe `users`
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `users`[0m
+
+
+Started GET "/contacts" for 127.0.0.1 at 2011-04-28 15:25:25 -0600
+  Processing by ContactsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_89614450_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+Rendered contacts/_directory_sidebar.html.erb (3.4ms)
+  [1m[35mContact Load (28.7ms)[0m  SELECT `contacts`.* FROM `contacts` INNER JOIN `relationships` ON `contacts`.id = `relationships`.contact_id WHERE ((`relationships`.user_id = 1) AND ((`contacts`.`active` = 1)))
+Rendered contacts/index.html.erb within layouts/application (103.0ms)
+Completed   in 401ms
+
+ActionView::Template::Error (No route matches {:controller=>"contacts", :action=>"remove", :id=>#<Contact id: 4, user_id: nil, name: "Adam Chen", gender: "Male", cell_phone: "1234567890", work_phone: "5301234567", birthday: "2011-04-12 00:00:00", email: "adam@gmail.com", website: "", business_name: nil, business_description: nil, business_phone: nil, business_website: nil, about: "", status: nil, created_at: "2011-04-21 00:02:47", updated_at: "2011-04-28 20:40:43", address_line_1: "", address_line_2: "", city: "", state: "", zip: "", newcomer: true, member: true, staff: false, elder: false, deacon: false, active: true>}):
+    13:     <td><%= contact.email%></td>
+    14:     <td><%= number_to_phone(contact.cell_phone)%></td>
+    15:     <td><%= link_to 'Show', contact %>
+    16:       | <%= link_to 'Remove', :controller => "contacts", :action => "remove", :id => contact %>
+    17:     </td>
+    18:   </tr>
+    19: <% end %>
+  app/views/contacts/index.html.erb:16:in `block in _app_views_contacts_index_html_erb__574321349_90230980__8170958'
+  app/views/contacts/index.html.erb:10:in `_app_views_contacts_index_html_erb__574321349_90230980__8170958'
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (23.8ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (34.1ms)
+  [1m[35mContact Load (353.2ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 6 LIMIT 1
+  [1m[36mSQL (136.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mContact Load (9.8ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 6 LIMIT 1
+  [1m[36mSQL (3.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (23.4ms)[0m  UPDATE `contacts` SET `active` = 0, `updated_at` = '2011-04-28 21:55:16' WHERE `contacts`.`id` = 6
+  [1m[36mSQL (40.6ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/contacts" for 127.0.0.1 at 2011-04-28 15:59:47 -0600
+  Processing by ContactsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_90212210_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+Rendered contacts/_directory_sidebar.html.erb (2.5ms)
+  [1m[35mContact Load (44.1ms)[0m  SELECT `contacts`.* FROM `contacts` INNER JOIN `relationships` ON `contacts`.id = `relationships`.contact_id WHERE ((`relationships`.user_id = 1) AND ((`contacts`.`active` = 1)))
+Rendered contacts/index.html.erb within layouts/application (97.2ms)
+Completed 200 OK in 645ms (Views: 84.0ms | ActiveRecord: 44.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:00:09 -0600
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered users/_admin_sidebar.html.erb (1.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users`
+Rendered users/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 116ms (Views: 58.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2011-04-28 16:00:26 -0600
+  Processing by ContactsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_93262860_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+Rendered contacts/_directory_sidebar.html.erb (1.5ms)
+  [1m[35mContact Load (1.4ms)[0m  SELECT `contacts`.* FROM `contacts` INNER JOIN `relationships` ON `contacts`.id = `relationships`.contact_id WHERE ((`relationships`.user_id = 1) AND ((`contacts`.`active` = 1)))
+Rendered contacts/index.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 250ms (Views: 36.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/contacts/4/remove" for 127.0.0.1 at 2011-04-28 16:01:46 -0600
+  Processing by ContactsController#remove as HTML
+  Parameters: {"authenticity_token"=>"uAkSOLN5paFUY2Wu+7QfAlYf3JQdicK/ITJQrH7usBo=", "id"=>"4"}
+  [1m[36mContact Load (2.6ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 4 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE `contacts` SET `active` = 0, `updated_at` = '2011-04-28 22:01:46' WHERE `contacts`.`id` = 4[0m
+  [1m[35mSQL (31.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/contacts
+Completed 302 Found in 131ms
+
+
+Started GET "/contacts" for 127.0.0.1 at 2011-04-28 16:01:46 -0600
+  Processing by ContactsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_93770820_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+Rendered contacts/_directory_sidebar.html.erb (4.2ms)
+  [1m[35mContact Load (2.0ms)[0m  SELECT `contacts`.* FROM `contacts` INNER JOIN `relationships` ON `contacts`.id = `relationships`.contact_id WHERE ((`relationships`.user_id = 1) AND ((`contacts`.`active` = 1)))
+Rendered contacts/index.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 171ms (Views: 37.0ms | ActiveRecord: 36.8ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2011-04-28 16:06:32 -0600
+  Processing by ContactsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_93274350_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+Rendered contacts/_directory_sidebar.html.erb (1.8ms)
+  [1m[35mContact Load (0.1ms)[0m  SELECT `contacts`.* FROM `contacts` INNER JOIN `relationships` ON `contacts`.id = `relationships`.contact_id WHERE ((`relationships`.user_id = 1) AND ((`contacts`.`active` = 1)))
+  [1m[36mUser Load (27.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 6 LIMIT 1[0m
+Rendered contacts/index.html.erb within layouts/application (57.6ms)
+Completed 200 OK in 225ms (Views: 33.4ms | ActiveRecord: 27.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:06:38 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (4.8ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+Rendered users/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 123ms (Views: 17.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2011-04-28 16:06:43 -0600
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (24.1ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 5) LIMIT 1
+  [1m[36mContact Load (0.5ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1[0m
+Rendered users/_profile_sidebar.html.erb (80.2ms)
+Rendered users/show.html.erb within layouts/application (92.2ms)
+Completed 200 OK in 257ms (Views: 121.9ms | ActiveRecord: 25.6ms)
+  [1m[35mUser Load (1.4ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  [1m[35mUser Load (65.0ms)[0m  SELECT `users`.* FROM `users` ORDER BY name
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:13:22 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY name[0m
+Rendered users/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 57ms (Views: 22.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:14:07 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.1ms)
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY admin, name[0m
+Rendered users/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 64ms (Views: 21.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:14:43 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY admin DESC, name[0m
+Rendered users/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 56ms (Views: 20.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:16:57 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY admin DESC, name[0m
+Rendered users/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 47ms (Views: 14.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:20:54 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY admin DESC, name[0m
+Rendered users/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 74ms (Views: 15.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:21:15 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.1ms)
+  [1m[36mUser Load (55.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (id != 1) ORDER BY admin DESC, name[0m
+Rendered users/index.html.erb within layouts/application (65.6ms)
+Completed 200 OK in 98ms (Views: 13.7ms | ActiveRecord: 55.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:24:21 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (id != 1) ORDER BY admin DESC, name[0m
+Rendered users/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 45ms (Views: 15.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:25:01 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (id != 1) ORDER BY admin DESC, name[0m
+Rendered users/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 75ms (Views: 14.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:25:10 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (id != 1) ORDER BY admin DESC, name[0m
+Rendered users/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 123ms (Views: 21.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:26:25 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (id != 1) ORDER BY admin DESC, name[0m
+Rendered users/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 45ms (Views: 15.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2011-04-28 16:26:53 -0600
+  Processing by ContactsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_93546820_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+Rendered contacts/_directory_sidebar.html.erb (3.7ms)
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT `contacts`.* FROM `contacts` INNER JOIN `relationships` ON `contacts`.id = `relationships`.contact_id WHERE ((`relationships`.user_id = 1) AND ((`contacts`.`active` = 1)))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 6 LIMIT 1
+Rendered contacts/index.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 179ms (Views: 40.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:27:14 -0600
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered users/_admin_sidebar.html.erb (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (id != 1) ORDER BY admin DESC, name
+Rendered users/index.html.erb within layouts/application (51.9ms)
+Completed 200 OK in 110ms (Views: 59.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2011-04-28 16:27:23 -0600
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContact Load (0.2ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1[0m
+Rendered users/_profile_sidebar.html.erb (38.6ms)
+Rendered users/_form.html.erb (34.2ms)
+Rendered users/edit.html.erb within layouts/application (101.5ms)
+Completed 200 OK in 167ms (Views: 139.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/4" for 127.0.0.1 at 2011-04-28 16:27:57 -0600
+  Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uAkSOLN5paFUY2Wu+7QfAlYf3JQdicK/ITJQrH7usBo=", "user"=>{"name"=>"Mei-Lin Chen", "email"=>"meilinchen1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "admin"=>"1"}, "commit"=>"Update User", "id"=>"4"}
+  [1m[35mUser Load (1.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  [1m[36mUser Load (4.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+WARNING: Can't mass-assign protected attributes: admin
+  [1m[36mUser Load (37.1ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (`users`.`email` = BINARY 'meilinchen1@gmail.com') AND (`users`.id <> 4) LIMIT 1[0m
+  [1m[35mAREL (0.5ms)[0m  UPDATE `users` SET `password_salt` = '$2a$10$Us0cvgiuuFzJlBJHhYGQOO', `password_hash` = '$2a$10$Us0cvgiuuFzJlBJHhYGQOOZE4ypQRCO2u1jnKu/s6mdjZUCn8Dxae', `updated_at` = '2011-04-28 22:27:57' WHERE `users`.`id` = 4
+  [1m[36mSQL (20.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 226ms
+
+
+Started GET "/users/4" for 127.0.0.1 at 2011-04-28 16:27:57 -0600
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (0.6ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 4) LIMIT 1
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1[0m
+Rendered users/_profile_sidebar.html.erb (17.5ms)
+Rendered users/show.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 102ms (Views: 24.8ms | ActiveRecord: 64.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:28:05 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.0ms)
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (id != 1) ORDER BY admin DESC, name[0m
+Rendered users/index.html.erb within layouts/application (42.2ms)
+Completed 200 OK in 74ms (Views: 44.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2011-04-28 16:28:42 -0600
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (0.4ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1
+Rendered users/_profile_sidebar.html.erb (69.5ms)
+Rendered users/_form.html.erb (5.4ms)
+Rendered users/edit.html.erb within layouts/application (79.6ms)
+Completed 200 OK in 123ms (Views: 82.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/4" for 127.0.0.1 at 2011-04-28 16:29:15 -0600
+  Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uAkSOLN5paFUY2Wu+7QfAlYf3JQdicK/ITJQrH7usBo=", "user"=>{"name"=>"Mei-Lin Chen", "email"=>"meilinchen1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "admin"=>"1"}, "commit"=>"Update User", "id"=>"4"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mBEGIN[0m
+WARNING: Can't mass-assign protected attributes: admin
+  [1m[35mUser Load (2.4ms)[0m  SELECT `users`.`id` FROM `users` WHERE (`users`.`email` = BINARY 'meilinchen1@gmail.com') AND (`users`.id <> 4) LIMIT 1
+  [1m[36mAREL (23.8ms)[0m  [1mUPDATE `users` SET `password_salt` = '$2a$10$Sda2nhU2774HQDwvdqZZ/e', `password_hash` = '$2a$10$Sda2nhU2774HQDwvdqZZ/et/javw47sfIb4Z3oh3PoJ9mLCUBrcx6', `updated_at` = '2011-04-28 22:29:15' WHERE `users`.`id` = 4[0m
+  [1m[35mSQL (3.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 222ms
+
+
+Started GET "/users/4" for 127.0.0.1 at 2011-04-28 16:29:15 -0600
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContact Load (0.3ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 4) LIMIT 1[0m
+  [1m[35mContact Load (0.1ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1
+Rendered users/_profile_sidebar.html.erb (18.5ms)
+Rendered users/show.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 105ms (Views: 26.2ms | ActiveRecord: 33.7ms)
+
+
+Started GET "/contacts/1/edit?profile=true" for 127.0.0.1 at 2011-04-28 16:29:31 -0600
+  Processing by ContactsController#edit as HTML
+  Parameters: {"profile"=>"true", "id"=>"1"}
+  [1m[36mContact Load (0.5ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1[0m
+Rendered users/_profile_sidebar.html.erb (28.8ms)
+  [1m[35mGroup Load (0.1ms)[0m  SELECT `groups`.* FROM `groups`
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT `groups`.*, `groups`.`id` FROM `groups` INNER JOIN `contact_groups` ON `groups`.id = `contact_groups`.group_id WHERE `groups`.`id` = 2 AND ((`contact_groups`.contact_id = 1)) LIMIT 1[0m
+Rendered contacts/_form.html.erb (116.2ms)
+Rendered contacts/edit.html.erb within layouts/application (158.3ms)
+Completed 200 OK in 334ms (Views: 170.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:29:36 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (3.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (id != 1) ORDER BY admin DESC, name[0m
+Rendered users/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 68ms (Views: 18.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2011-04-28 16:31:58 -0600
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mContact Load (0.2ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1
+Rendered users/_profile_sidebar.html.erb (39.2ms)
+Rendered users/_form.html.erb (4.6ms)
+Rendered users/edit.html.erb within layouts/application (49.3ms)
+Completed 200 OK in 135ms (Views: 53.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/4" for 127.0.0.1 at 2011-04-28 16:32:07 -0600
+  Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uAkSOLN5paFUY2Wu+7QfAlYf3JQdicK/ITJQrH7usBo=", "user"=>{"name"=>"Mei-Lin Chen", "email"=>"meilinchen1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "admin"=>"1"}, "commit"=>"Update User", "id"=>"4"}
+  [1m[36mUser Load (3.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.`id` FROM `users` WHERE (`users`.`email` = BINARY 'meilinchen1@gmail.com') AND (`users`.id <> 4) LIMIT 1
+  [1m[36mAREL (37.6ms)[0m  [1mUPDATE `users` SET `admin` = 1, `password_salt` = '$2a$10$8YgoiRsmqrW16Al5Eo2SPO', `password_hash` = '$2a$10$8YgoiRsmqrW16Al5Eo2SPOZ90R8LVJUFOW5tonl1WlHtzAMT2x4se', `updated_at` = '2011-04-28 22:32:08' WHERE `users`.`id` = 4[0m
+  [1m[35mSQL (21.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 280ms
+
+
+Started GET "/users/4" for 127.0.0.1 at 2011-04-28 16:32:08 -0600
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContact Load (1.6ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 4) LIMIT 1[0m
+  [1m[35mContact Load (0.1ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 1) LIMIT 1
+Rendered users/_profile_sidebar.html.erb (17.6ms)
+Rendered users/show.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 69ms (Views: 24.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:32:12 -0600
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered users/_admin_sidebar.html.erb (1.2ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (id != 1) ORDER BY admin DESC, name
+Rendered users/index.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 56ms (Views: 22.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/5" for 127.0.0.1 at 2011-04-28 16:32:36 -0600
+  Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uAkSOLN5paFUY2Wu+7QfAlYf3JQdicK/ITJQrH7usBo=", "id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  [1m[35mUser Load (4.8ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mContact Load (2.4ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE (`contacts`.user_id = 5) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (31.4ms)[0m  [1mDELETE FROM `users` WHERE `users`.`id` = 5[0m
+  [1m[35mSQL (3.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/users
+Completed 302 Found in 273ms
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:32:36 -0600
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered users/_admin_sidebar.html.erb (1.3ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (id != 1) ORDER BY admin DESC, name
+Rendered users/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 61ms (Views: 19.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2011-04-28 16:32:40 -0600
+  Processing by ContactsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_89562090_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+Rendered contacts/_directory_sidebar.html.erb (1.4ms)
+  [1m[35mContact Load (0.3ms)[0m  SELECT `contacts`.* FROM `contacts` INNER JOIN `relationships` ON `contacts`.id = `relationships`.contact_id WHERE ((`relationships`.user_id = 1) AND ((`contacts`.`active` = 1)))
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 6 LIMIT 1[0m
+Rendered contacts/index.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 161ms (Views: 32.4ms | ActiveRecord: 64.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:34:43 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (id != 1) ORDER BY admin DESC, name[0m
+Rendered users/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 43ms (Views: 13.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:53:29 -0600
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 16:53:58 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (2.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (id != 1) ORDER BY admin DESC, name[0m
+Rendered users/index.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 100ms (Views: 28.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/contacts/removed" for 127.0.0.1 at 2011-04-28 16:54:07 -0600
+  Processing by ContactsController#removed as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.2ms)
+  [1m[36mContact Load (4.3ms)[0m  [1mSELECT `contacts`.* FROM `contacts` WHERE `contacts`.`active` = 0 ORDER BY name[0m
+Rendered contacts/removed.html.erb within layouts/application (36.1ms)
+Completed 200 OK in 129ms (Views: 35.2ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/contacts/4/activate" for 127.0.0.1 at 2011-04-28 16:54:21 -0600
+  Processing by ContactsController#activate as HTML
+  Parameters: {"authenticity_token"=>"uAkSOLN5paFUY2Wu+7QfAlYf3JQdicK/ITJQrH7usBo=", "id"=>"4"}
+  [1m[35mContact Load (0.5ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 4 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `contacts`.* FROM `contacts` WHERE `contacts`.`id` = 4 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.5ms)[0m  UPDATE `contacts` SET `active` = 1, `updated_at` = '2011-04-28 22:54:22' WHERE `contacts`.`id` = 4
+  [1m[36mSQL (31.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/contacts
+Completed 302 Found in 159ms
+
+
+Started GET "/contacts" for 127.0.0.1 at 2011-04-28 16:54:22 -0600
+  Processing by ContactsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_89253790_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+Rendered contacts/_directory_sidebar.html.erb (1.4ms)
+  [1m[36mContact Load (0.7ms)[0m  [1mSELECT `contacts`.* FROM `contacts` INNER JOIN `relationships` ON `contacts`.id = `relationships`.contact_id WHERE ((`relationships`.user_id = 1) AND ((`contacts`.`active` = 1)))[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 6 LIMIT 1
+Rendered contacts/index.html.erb within layouts/application (58.0ms)
+Completed 200 OK in 121ms (Views: 62.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2011-04-28 16:54:57 -0600
+  Processing by ContactsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_89192040_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+Rendered contacts/_directory_sidebar.html.erb (1.9ms)
+  [1m[35mContact Load (0.2ms)[0m  SELECT `contacts`.* FROM `contacts` INNER JOIN `relationships` ON `contacts`.id = `relationships`.contact_id WHERE ((`relationships`.user_id = 1) AND ((`contacts`.`active` = 1)))
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 6 LIMIT 1[0m
+Rendered contacts/index.html.erb within layouts/application (80.6ms)
+Completed 200 OK in 168ms (Views: 84.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2011-04-28 17:25:50 -0600
+  Processing by ContactsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_93806530_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+  [1m[36mGroup Load (38.5ms)[0m  [1mSELECT `groups`.* FROM `groups` ORDER BY name[0m
+  [1m[35mContact Load (0.1ms)[0m  SELECT `contacts`.* FROM `contacts` INNER JOIN `relationships` ON `contacts`.id = `relationships`.contact_id WHERE ((`relationships`.user_id = 1) AND ((`contacts`.`active` = 1)))
+Rendered contacts/_directory_sidebar.html.erb (74.2ms)
+Rendered contacts/index.html.erb within layouts/application (75.8ms)
+Completed   in 201ms
+
+ActionView::Template::Error (undefined method `group_contacts_url' for #<#<Class:0xb2f45e4>:0xb2f3658>):
+    19:   <h3 class="widget-title">Filter by group</h3>   
+    20:     <ul>
+    21:       <% Group.order(:name).each do |group| %>
+    22:         <li><%= link_to group.name, group_contacts_url(group) %></li>
+    23:       <% end %>
+    24:     </ul>
+    25: </li>
+  app/views/contacts/_directory_sidebar.html.erb:22:in `block (2 levels) in _app_views_contacts__directory_sidebar_html_erb___528302689_93806530_872346568'
+  app/views/contacts/_directory_sidebar.html.erb:21:in `block in _app_views_contacts__directory_sidebar_html_erb___528302689_93806530_872346568'
+  app/views/contacts/_directory_sidebar.html.erb:1:in `_app_views_contacts__directory_sidebar_html_erb___528302689_93806530_872346568'
+  app/views/contacts/index.html.erb:1:in `_app_views_contacts_index_html_erb__574321349_93820280__8170958'
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.4ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2011-04-28 17:26:05 -0600
+  Processing by ContactsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_92936080_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+  [1m[35mGroup Load (0.1ms)[0m  SELECT `groups`.* FROM `groups` ORDER BY name
+Rendered contacts/_directory_sidebar.html.erb (19.4ms)
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT `contacts`.* FROM `contacts` INNER JOIN `relationships` ON `contacts`.id = `relationships`.contact_id WHERE ((`relationships`.user_id = 1) AND ((`contacts`.`active` = 1)))[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 6 LIMIT 1
+Rendered contacts/index.html.erb within layouts/application (48.9ms)
+Completed 200 OK in 145ms (Views: 51.8ms | ActiveRecord: 39.2ms)
+
+
+Started GET "/groups/2/contacts" for 127.0.0.1 at 2011-04-28 17:29:26 -0600
+
+SyntaxError (/home/vadmin/Apps/dirlib/app/controllers/contacts_controller.rb:74: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.1ms)
+
+
+Started GET "/groups/2/contacts" for 127.0.0.1 at 2011-04-28 17:32:02 -0600
+
+SyntaxError (/home/vadmin/Apps/dirlib/app/controllers/contacts_controller.rb:74: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.1ms)
+
+
+Started GET "/groups/2/contacts" for 127.0.0.1 at 2011-04-28 17:34:18 -0600
+  Processing by ContactsController#index as HTML
+  Parameters: {"group_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mGroup Load (23.0ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_94349930_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT `groups`.* FROM `groups` ORDER BY name[0m
+Rendered contacts/_directory_sidebar.html.erb (2.5ms)
+  [1m[35mContact Load (17.8ms)[0m  SELECT `contacts`.* FROM `contacts` INNER JOIN `contact_groups` ON `contacts`.id = `contact_groups`.contact_id WHERE ((`contact_groups`.group_id = 2))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered contacts/index.html.erb within layouts/application (66.4ms)
+Completed 200 OK in 260ms (Views: 52.0ms | ActiveRecord: 41.1ms)
+
+
+Started GET "/groups/2/contacts" for 127.0.0.1 at 2011-04-28 17:36:14 -0600
+  Processing by ContactsController#index as HTML
+  Parameters: {"group_id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1[0m
+  [1m[35mContact Load (0.4ms)[0m  SELECT `contacts`.* FROM `contacts`
+Completed   in 97ms
+
+NameError (undefined local variable or method `group' for #<ContactsController:0xac6c398>):
+  app/controllers/contacts_controller.rb:9:in `index'
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.6ms)
+
+
+Started GET "/groups/2/contacts" for 127.0.0.1 at 2011-04-28 17:36:29 -0600
+  Processing by ContactsController#index as HTML
+  Parameters: {"group_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT `contacts`.* FROM `contacts`[0m
+Completed   in 62ms
+
+NameError (undefined local variable or method `group' for #<ContactsController:0xb183c78>):
+  app/controllers/contacts_controller.rb:9:in `index'
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.1ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.4ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2011-04-28 17:36:53 -0600
+  Processing by ContactsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_89567180_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT `groups`.* FROM `groups` ORDER BY name[0m
+Rendered contacts/_directory_sidebar.html.erb (21.9ms)
+  [1m[35mContact Load (0.1ms)[0m  SELECT `contacts`.* FROM `contacts` INNER JOIN `relationships` ON `contacts`.id = `relationships`.contact_id WHERE ((`relationships`.user_id = 1) AND ((`contacts`.`active` = 1)))
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 6 LIMIT 1[0m
+Rendered contacts/index.html.erb within layouts/application (79.8ms)
+Completed 200 OK in 282ms (Views: 83.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/groups/2/contacts" for 127.0.0.1 at 2011-04-28 17:36:57 -0600
+  Processing by ContactsController#index as HTML
+  Parameters: {"group_id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1[0m
+  [1m[35mContact Load (0.1ms)[0m  SELECT `contacts`.* FROM `contacts`
+Completed   in 62ms
+
+NameError (undefined local variable or method `group' for #<ContactsController:0xb2276e8>):
+  app/controllers/contacts_controller.rb:9:in `index'
+
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+Rendered /home/vadmin/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (39.8ms)
+
+
+Started GET "/groups/2/contacts" for 127.0.0.1 at 2011-04-28 17:39:00 -0600
+  Processing by ContactsController#index as HTML
+  Parameters: {"group_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mGroup Load (1.5ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_89418690_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT `groups`.* FROM `groups` ORDER BY name[0m
+Rendered contacts/_directory_sidebar.html.erb (2.4ms)
+  [1m[35mContact Load (0.1ms)[0m  SELECT `contacts`.* FROM `contacts` INNER JOIN `contact_groups` ON `contacts`.id = `contact_groups`.contact_id WHERE ((`contact_groups`.group_id = 2))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered contacts/index.html.erb within layouts/application (61.9ms)
+Completed 200 OK in 144ms (Views: 64.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-04-28 17:39:16 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (id != 1) ORDER BY admin DESC, name[0m
+Rendered users/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 71ms (Views: 19.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2011-04-28 17:39:19 -0600
+  Processing by GroupsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (2.8ms)
+  [1m[36mGroup Load (4.3ms)[0m  [1mSELECT `groups`.* FROM `groups`[0m
+Rendered groups/index.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 223ms (Views: 126.2ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/groups/new" for 127.0.0.1 at 2011-04-28 17:39:22 -0600
+  Processing by GroupsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered groups/_form.html.erb (44.8ms)
+Rendered groups/new.html.erb within layouts/application (103.5ms)
+Completed 200 OK in 193ms (Views: 139.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/groups" for 127.0.0.1 at 2011-04-28 17:39:36 -0600
+  Processing by GroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uAkSOLN5paFUY2Wu+7QfAlYf3JQdicK/ITJQrH7usBo=", "group"=>{"name"=>"Acacia"}, "commit"=>"Create Group"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (43.5ms)[0m  [1mdescribe `groups`[0m
+  [1m[35mAREL (21.3ms)[0m  INSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('Acacia', '2011-04-28 23:39:36', '2011-04-28 23:39:36')
+  [1m[36mSQL (14.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/groups/3
+Completed 302 Found in 129ms
+
+
+Started GET "/groups/3" for 127.0.0.1 at 2011-04-28 17:39:36 -0600
+  Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mGroup Load (0.3ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 3 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered groups/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 88ms (Views: 19.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2011-04-28 17:39:43 -0600
+  Processing by GroupsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered users/_admin_sidebar.html.erb (1.2ms)
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT `groups`.* FROM `groups`[0m
+Rendered groups/index.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 70ms (Views: 21.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2011-04-28 17:39:49 -0600
+  Processing by ContactsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_89521450_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+  [1m[36mGroup Load (2.5ms)[0m  [1mSELECT `groups`.* FROM `groups` ORDER BY name[0m
+Rendered contacts/_directory_sidebar.html.erb (45.8ms)
+  [1m[35mContact Load (0.1ms)[0m  SELECT `contacts`.* FROM `contacts` INNER JOIN `relationships` ON `contacts`.id = `relationships`.contact_id WHERE ((`relationships`.user_id = 1) AND ((`contacts`.`active` = 1)))
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 6 LIMIT 1[0m
+Rendered contacts/index.html.erb within layouts/application (127.4ms)
+Completed 200 OK in 206ms (Views: 132.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/groups/3/contacts" for 127.0.0.1 at 2011-04-28 17:44:06 -0600
+  Processing by ContactsController#index as HTML
+  Parameters: {"group_id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mGroup Load (1.3ms)[0m  [1mSELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 3 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_94147190_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+  [1m[35mGroup Load (0.2ms)[0m  SELECT `groups`.* FROM `groups` ORDER BY name
+Rendered contacts/_directory_sidebar.html.erb (2.8ms)
+  [1m[36mContact Load (0.5ms)[0m  [1mSELECT `contacts`.* FROM `contacts` INNER JOIN `contact_groups` ON `contacts`.id = `contact_groups`.contact_id WHERE ((`contact_groups`.group_id = 3))[0m
+Rendered contacts/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 149ms (Views: 20.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/groups/2/contacts" for 127.0.0.1 at 2011-04-28 17:44:09 -0600
+  Processing by ContactsController#index as HTML
+  Parameters: {"group_id"=>"2"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from block in _app_views_contacts__directory_sidebar_html_erb___528302689_94121630_872346568 at /home/vadmin/Apps/dirlib/app/views/contacts/_directory_sidebar.html.erb:4)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT `groups`.* FROM `groups` ORDER BY name
+Rendered contacts/_directory_sidebar.html.erb (2.5ms)
+  [1m[36mContact Load (0.1ms)[0m  [1mSELECT `contacts`.* FROM `contacts` INNER JOIN `contact_groups` ON `contacts`.id = `contact_groups`.contact_id WHERE ((`contact_groups`.group_id = 2))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered contacts/index.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 161ms (Views: 34.8ms | ActiveRecord: 1.6ms)

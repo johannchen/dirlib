@@ -2,9 +2,11 @@ class UsersController < ApplicationController
   load_and_authorize_resource
 
   def index
+    @users = User.where(["id != ?", current_user.id]).order("admin DESC, name")
   end
 
   def new
+    @contacts = Contact.where("user_id is null  and email is not null").order("name")
   end
 
   def show
@@ -12,9 +14,17 @@ class UsersController < ApplicationController
   end
 
   def create
+    # pre populate name and email from selected contact
+    contact = Contact.find(params[:contact][:id])
+    @user = User.new(:name => contact.name, :email => contact.email) 
+    # random auto generate password
+    @user.new_random_password 
     if @user.save
+      # assign contact to user
+      contact.update_attribute :user_id, @user.id
+      # email confirmation to user
       UserMailer.registration_confirmation(@user).deliver
-      redirect_to root_url, :notice => "Signed up!"
+      redirect_to users_path, :notice => "User was successfully created!"
     else
       render "new" 
     end
@@ -30,6 +40,17 @@ class UsersController < ApplicationController
       else
         format.html { render :action => "edit" }
       end
+    end
+  end
+
+  def destroy
+    if contact = @user.contact
+      contact.update_attribute :user_id, nil
+    end
+    @user.destroy
+    
+    respond_to do |format|
+      format.html { redirect_to users_url, :notice => "User has been successfully deleted." }
     end
   end
 

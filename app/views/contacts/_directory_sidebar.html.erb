@@ -15,6 +15,14 @@
         <li><%= link_to 'Add contact', new_contact_path %></li>
     </ul>
 </li>
+<li id="recent-posts-2" class="widget-container"> 
+  <h3 class="widget-title">Filter by group</h3>   
+    <ul>
+      <% Group.order(:name).each do |group| %>
+        <li><%= link_to group.name, group_contacts_url(group) %></li>
+      <% end %>
+    </ul>
+</li>
 <% end %>
 
 
