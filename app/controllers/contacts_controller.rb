@@ -23,11 +23,11 @@ class ContactsController < ApplicationController
 
   def create
     if @contact.save 
-      # create contact under user
-      @contact.users << current_user unless params[:profile]
       if @contact.user_id
         redirect_to user_path(current_user), :notice => 'Profile was created.'
       else
+        # create contact under user
+        @contact.users << current_user unless params[:profile]
         redirect_to @contact, :notice => 'Contact was created.'
       end
     else

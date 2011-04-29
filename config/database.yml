@@ -11,8 +11,7 @@ development:
   reconnect: false
   database: dirlib
   pool: 5
-  username: jchen
-  password: secret99
+  username: root
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

@@ -34,15 +34,15 @@
                 <div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
 
                 <div class="menu">
-<ul><li class="current_page_item"><%= link_to 'Home', root_url %></a></li>
+<ul><li class="page_item current_page_item"><%= link_to 'Home', root_url %></a></li>
 <% if current_user %>
-<li class="page_item page-item-2"><%= link_to 'Profile', user_path(current_user) %></li>
-<li class="page_item page-item-2"><%= link_to 'Directory', contacts_path %></li>
-<% if current_user.admin %>
-<li class="page_item page-item-2"><%= link_to 'Admin', users_path %></li>
+<li class="page_item"><%= link_to 'Profile', user_path(current_user) %></li>
+<li class="page_item"><%= link_to 'Directory', contacts_path %></li>
+  <% if current_user.admin %>
+<li class="page_item"><%= link_to 'Admin', users_path %></li>
+  <% end %>
 <% end %>
-<% end %>
-<li class="page_item page-item-2"><a href="#" title="About">About</a></li>
+<li class="page_item"><a href="#" title="About">About</a></li>
 </ul></div>
       </div><!-- #access -->
     </div><!-- #masthead -->
