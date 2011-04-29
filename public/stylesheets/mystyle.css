@@ -1,4 +1,35 @@
-#contact_line {
-  word-spacing: 30px;
-  margin-bottom: 10px;
+
+.contact .contact-side {
+  float: left;
+  width: 100px;
+}
+.contact .contact-side .avatar {
+	background: #fff;
+	border: 1px solid #e7e7e7;
+	float: left;
+	height: 60px;
+	margin: 0 15px 60px 0;
+	padding: 11px;
+}
+
+.contact .contact-body {
+  margin-left: 120px;
+}
+.contact .contact-body .contact-details {
+  margin: 20px 0;
+  list-style: none;
+}
+
+.contact .contact-details li {
+  display: inline-block;
+  margin: 0 25px 15px 0;
+}
+
+.contact-details .new-line {
+  display: block;
+}
+
+span.ui-icon {
+  float: left;
+  margin-right: 4px;
 }

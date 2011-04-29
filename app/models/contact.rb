@@ -12,6 +12,9 @@ class Contact < ActiveRecord::Base
   validates_numericality_of :cell_phone, :work_phone, :allow_blank => true
   validates_length_of :cell_phone, :work_phone, :is => 10, :allow_blank => true
 
+  scope :active, where(:active => true)
+  scope :active_non_user, where("user_id is null and email is not null and active is true").order("name")
+
   def self.search(search)
     where(['name like ?', "%#{search}%"]) if search
   end
@@ -29,6 +32,10 @@ class Contact < ActiveRecord::Base
 
   def name_email
     name + " - " + email
+  end
+
+  def group_names
+    self.groups.map(&:name).join(', ') if self.groups
   end
   #def birthday
   #  birthday.to_date if birthday

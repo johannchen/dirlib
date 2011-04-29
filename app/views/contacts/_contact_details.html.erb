@@ -1,10 +1,44 @@
-<div id="avatar">
+<div class="contact">
+  <div class="contact-side">
+    <div class="avatar">
 <%= image_tag avatar_url(@contact) %>
+    </div>
+  </div>
+  <div class="contact-body">
+<ul class="contact-details">
+  <% unless @contact.website.blank? %>
+  <li><%= link_to @contact.website, @contact.website %></li>
+  <% end %>
+
+  <li><%= @contact.email %></li>
+  <% unless @contact.cell_phone.blank? %>
+  <li><%= number_to_phone(@contact.cell_phone, :area_code => true) %>[m]</li>
+  <% end %>
+
+  <% unless @contact.work_phone.blank? %>
+  <li><%=number_to_phone(@contact.work_phone, :area_code => true) %>[w]</li>
+  <% end %>
+
+  <% unless @contact.address.blank? %>
+  <div class="new-line"></div>
+  <li><%= @contact.address %></li>
+  <% end %>
+
+  <% if can? :update, @contact %>
+  <div class="new-line"></div>
+  <li><span class="ui-icon ui-icon-pencil"></span><%= link_to "Edit contact", edit_contact_path(@contact) %></li>
+  <% end %>
+
+  <% unless @contact.group_names.blank? %>
+  <div class="new-line"></div>
+  <li><strong>Groups:</strong> <%= @contact.group_names %></li>
+  <% end %>
+
+  <% unless @contact.about.blank? %>
+  <div class="new-line"></div>
+  <li><strong>About:</strong> <%= @contact.about %></li> 
+  <% end %>
+</ul>
+  </div><!-- end contact-body -->
 </div>
-<div id="contact_line">
-<%= @contact.email %> <%= number_to_phone(@contact.cell_phone) %> <%=number_to_phone(@contact.work_phone) %>
-</div>
-<p>
-  <%= @contact.address %>
-</p>
 

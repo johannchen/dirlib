@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @contacts = Contact.where("user_id is null  and email is not null").order("name")
+    @contacts = Contact.active_non_user
   end
 
   def show

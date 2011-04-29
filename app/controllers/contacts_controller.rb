@@ -6,9 +6,9 @@ class ContactsController < ApplicationController
       @contacts = Contact.search(params[:search])
     elsif params[:group_id]
       @group = Group.find(params[:group_id])
-      @contacts = @group.contacts
+      @contacts = @group.contacts.active
     else
-      @contacts = current_user.active_contacts 
+      @contacts = current_user.contacts.active
     end
   end
 
@@ -16,9 +16,6 @@ class ContactsController < ApplicationController
   end
   
   def new
-    if params[:profile]
-      @contact = Contact.new(:user_id => current_user.id, :email => current_user.email, :name => current_user.name)
-    end 
   end
 
   def create
@@ -27,7 +24,7 @@ class ContactsController < ApplicationController
         redirect_to user_path(current_user), :notice => 'Profile was created.'
       else
         # create contact under user
-        @contact.users << current_user unless params[:profile]
+        @contact.users << current_user
         redirect_to @contact, :notice => 'Contact was created.'
       end
     else

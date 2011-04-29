@@ -1,12 +1,8 @@
 <% content_for :sidebar do %>
   <h3 class="widget-title">My Profile</h3>   
     <ul>
-        <li><%= link_to 'Change password', edit_user_path(current_user) %></li>
-        <% if contact =  current_user.contact %>
-        <li><%= link_to 'Edit profile', edit_contact_path(contact, :profile => "true") %></li>
-        <% else %>
-        <li><%= link_to 'Edit profile', new_contact_path(:profile => "true") %></li>
-        <% end %>
+      <li><%= link_to 'Change password', edit_user_path(current_user) %></li>
+      <li><a href="http://en.gravatar.com/" target="_blank">Add avatar</a></li>    
     </ul>
 <% end %>
 

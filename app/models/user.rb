@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
   has_one :contact
   has_many :relationships
   has_many :contacts, :through => :relationships
-  has_many :active_contacts, :through => :relationships, :class_name => "Contact", :source => :contact, :conditions => {:active => true}
 
   attr_accessible :name, :email, :password, :password_confirmation, :admin
 
