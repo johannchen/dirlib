@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110428204531) do
+ActiveRecord::Schema.define(:version => 20110504234230) do
 
   create_table "contact_groups", :force => true do |t|
     t.integer  "contact_id"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20110428204531) do
     t.string   "gender"
     t.string   "cell_phone"
     t.string   "work_phone"
-    t.datetime "birthday"
     t.string   "email"
     t.string   "website"
     t.string   "business_name"
@@ -47,6 +46,17 @@ ActiveRecord::Schema.define(:version => 20110428204531) do
     t.boolean  "elder",                :default => false
     t.boolean  "deacon",               :default => false
     t.boolean  "active",               :default => true
+    t.integer  "family_id"
+    t.string   "home_phone"
+    t.date     "attend_since"
+    t.date     "birthday"
+  end
+
+  create_table "families", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "groups", :force => true do |t|

@@ -1,5 +1,6 @@
 class Contact < ActiveRecord::Base
   belongs_to :user
+  belongs_to :family
   has_many :relationships
   has_many :users, :through => :relationships
   has_many :contact_groups

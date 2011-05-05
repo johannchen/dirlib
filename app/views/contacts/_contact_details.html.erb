@@ -11,8 +11,13 @@
   <% end %>
 
   <li><%= @contact.email %></li>
+
   <% unless @contact.cell_phone.blank? %>
   <li><%= number_to_phone(@contact.cell_phone, :area_code => true) %>[m]</li>
+  <% end %>
+
+  <% unless @contact.home_phone.blank? %>
+  <li><%= number_to_phone(@contact.home_phone, :area_code => true) %>[h]</li>
   <% end %>
 
   <% unless @contact.work_phone.blank? %>
@@ -29,11 +34,16 @@
   <li><span class="ui-icon ui-icon-pencil"></span><%= link_to "Edit contact", edit_contact_path(@contact) %></li>
   <% end %>
 
+  <% unless @contact.attend_since.blank? %>
+  <div class="new-line"></div>
+  <li>Attend DCCC Since: <%= @contact.attend_since %></li>
+  <% end %>
+
   <% unless @contact.group_names.blank? %>
   <div class="new-line"></div>
   <li><strong>Groups:</strong> <%= @contact.group_names %></li>
   <% end %>
-
+  
   <% unless @contact.about.blank? %>
   <div class="new-line"></div>
   <li><strong>About:</strong> <%= @contact.about %></li> 

@@ -4,6 +4,9 @@ $(function() {
   $("#contact_birthday").datepicker({
     dateFormat: 'yy-mm-dd'
   });
+  $("#contact_attend_since").datepicker({
+    dateFormat: 'yy-mm-dd'
+  });
 
   // TODO: problem on page reload with link_to
   $(".menu ul").delegate("li", "click", function() {

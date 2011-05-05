@@ -25,6 +25,10 @@
     <%= f.phone_field :cell_phone, :size => 10 %>
   </div>
   <div class="field">
+    <%= f.label :home_phone %> (digits only e.g 5301234567) <br />
+    <%= f.phone_field :home_phone, :size => 10 %>
+  </div>
+  <div class="field">
     <%= f.label :work_phone %> (digits only e.g 5301234567) <br />
     <%= f.phone_field :work_phone, :size => 10 %>
   </div>
@@ -62,6 +66,10 @@
       <%= check_box_tag "contact[group_ids][]", group.id, @contact.groups.include?(group) %>
       <%= group.name %><br />
     <% end %>
+  </div>
+  <div class="field">
+    <%= f.label :attend_dccc_since%><br />
+    <%= f.text_field :attend_since, :size => 10 %>
   </div>
   <div class="field">
     <%= f.label :website%><br />
