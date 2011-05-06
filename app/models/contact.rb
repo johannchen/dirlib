@@ -16,7 +16,7 @@ class Contact < ActiveRecord::Base
   scope :active_non_user, where("user_id is null and email is not null and active is true").order("name")
 
   def self.search(search)
-    where(['name like ?', "%#{search}%"]) if search
+    where(['first_name like ? or last_name like ?', "%#{search}%", "%#{search}%"]) if search
   end
 
   def address
