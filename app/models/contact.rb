@@ -6,12 +6,11 @@ class Contact < ActiveRecord::Base
   has_many :contact_groups, :dependent => :delete_all
   has_many :groups, :through => :contact_groups
 
-  # TODO: validation on birthday and others
   validates_presence_of :first_name, :last_name, :gender
   validates_uniqueness_of :email, :allow_nil => true
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
-  validates_numericality_of :cell_phone, :work_phone, :allow_blank => true
-  validates_length_of :cell_phone, :work_phone, :is => 10, :allow_blank => true
+  validates_numericality_of :cell_phone, :work_phone, :home_phone, :allow_blank => true
+  validates_length_of :cell_phone, :work_phone, :home_phone, :is => 10, :allow_blank => true
 
   scope :active, where(:active => true)
   scope :active_non_user, where("user_id is null and email is not null and active is true").order("name")
@@ -44,6 +43,6 @@ class Contact < ActiveRecord::Base
   end
 
   def family_members
-    self.family.contacts.map(&:name).join(', ') if self.family_id
+    self.family.contacts.map(&:first_name).join(', ') if self.family_id
   end
 end

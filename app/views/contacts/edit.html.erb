@@ -1,7 +1,3 @@
-<% if params[:profile] %>
-  <%= render 'users/profile_sidebar' %>
-<% else %>
-  <%= render 'directory_sidebar' %>
-<% end %>
+<%= render 'directory_sidebar' %>
 <h1><%= @contact.name %></h1>
 <%= render 'form' %>

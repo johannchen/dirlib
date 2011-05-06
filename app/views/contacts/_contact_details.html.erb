@@ -36,7 +36,7 @@
 
   <% unless @contact.attend_since.blank? %>
   <div class="new-line"></div>
-  <li>Attend DCCC Since: <%= @contact.attend_since %></li>
+  <li>Attend DCCC Since: <%= @contact.attend_since.strftime("%Y") %></li>
   <% end %>
 
   <% unless @contact.group_names.blank? %>
@@ -46,7 +46,11 @@
   
   <% unless @contact.family_id.blank? %>
   <div class="new-line"></div>
-  <li><strong>Family Members:</strong> <%= @contact.family_members %></li>
+  <li><strong>Family Members:</strong> 
+  <% @contact.family.contacts.each do |c| %>
+    <%= link_to c.first_name, c %>
+  <% end %>
+  </li>
   <% end %>
 
   <% unless @contact.about.blank? %>

@@ -3,7 +3,7 @@
     <div class="ui-widget">
       <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
       <% @group.errors.full_messages.each do |msg| %>
-        <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span><%= message %><br />
+        <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span><%= msg %><br />
       <% end %>
       </div>
     </div>
