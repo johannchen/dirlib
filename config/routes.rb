@@ -7,6 +7,7 @@ Dirlib::Application.routes.draw do
 
   resources :sessions
   resources :users
+  resources :families
 
   resources :groups do
     resources :contacts

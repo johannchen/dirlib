@@ -68,6 +68,10 @@
     <% end %>
   </div>
   <div class="field">
+    <%= f.label :family %><br />
+    <%= f.select :family_id, Family.order(:name).map {|family| [family.name, family.id]}, {:include_blank => true} %>
+  </div>
+  <div class="field">
     <%= f.label :attend_dccc_since%><br />
     <%= f.text_field :attend_since, :size => 10 %>
   </div>

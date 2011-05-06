@@ -1,0 +1,23 @@
+<%= form_for(@family) do |f| %>
+  <% if @family.errors.any? %>
+    <div class="ui-widget">
+      <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+      <% @family.errors.full_messages.each do |msg| %>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span><%= message %><br />
+      <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %> (e.g John and Mary Lee) <br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :rows => 4, :cols => 60 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

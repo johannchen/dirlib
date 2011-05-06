@@ -44,6 +44,11 @@
   <li><strong>Groups:</strong> <%= @contact.group_names %></li>
   <% end %>
   
+  <% unless @contact.family_id.blank? %>
+  <div class="new-line"></div>
+  <li><strong>Family Members:</strong> <%= @contact.family_members %></li>
+  <% end %>
+
   <% unless @contact.about.blank? %>
   <div class="new-line"></div>
   <li><strong>About:</strong> <%= @contact.about %></li> 

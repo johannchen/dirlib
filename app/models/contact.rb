@@ -1,13 +1,13 @@
 class Contact < ActiveRecord::Base
   belongs_to :user
   belongs_to :family
-  has_many :relationships
+  has_many :relationships, :dependent => :delete_all
   has_many :users, :through => :relationships
-  has_many :contact_groups
+  has_many :contact_groups, :dependent => :delete_all
   has_many :groups, :through => :contact_groups
 
   # TODO: validation on birthday and others
-  validates_presence_of :name, :gender
+  validates_presence_of :first_name, :last_name, :gender
   validates_uniqueness_of :email, :allow_nil => true
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   validates_numericality_of :cell_phone, :work_phone, :allow_blank => true
@@ -31,6 +31,10 @@ class Contact < ActiveRecord::Base
     a.html_safe
   end
 
+  def name
+    first_name + " " + last_name
+  end
+
   def name_email
     name + " - " + email
   end
@@ -38,7 +42,8 @@ class Contact < ActiveRecord::Base
   def group_names
     self.groups.map(&:name).join(', ') if self.groups
   end
-  #def birthday
-  #  birthday.to_date if birthday
-  #end
+
+  def family_members
+    self.family.contacts.map(&:name).join(', ') if self.family_id
+  end
 end

@@ -1,0 +1,11 @@
+<%= render 'contacts/directory_sidebar' %>
+<p>
+  <b>Name:</b>
+  <%= @family.name %>
+</p>
+<p>
+  <b>Description:</b>
+  <%= @family.description%>
+</p>
+
+<%= link_to 'Edit', edit_family_path(@family) %> 

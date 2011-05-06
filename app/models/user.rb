@@ -3,16 +3,15 @@ class User < ActiveRecord::Base
   has_many :relationships
   has_many :contacts, :through => :relationships
 
-  attr_accessible :name, :email, :password, :password_confirmation, :admin
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :admin
 
   attr_accessor :password
   before_save :encrypt_password
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
-  validates_presence_of :email
+  validates_presence_of :email, :first_name, :last_name
   validates_uniqueness_of :email
-  validates_presence_of :name
 
   def self.authenticate(email, password)
     user = find_by_email(email)
@@ -33,5 +32,9 @@ class User < ActiveRecord::Base
   def new_random_password
     self.password = ActiveSupport::SecureRandom.base64(6)
     self.password_confirmation = self.password
+  end
+
+  def name
+    first_name + " " + last_name
   end
 end
