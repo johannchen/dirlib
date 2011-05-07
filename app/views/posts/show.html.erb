@@ -1,0 +1,15 @@
+<h2 class="entry-title"><%= @post.title %></h2>
+<div class="entry-meta">
+  <span class="meta-prep meta-prep-author">Posted on</span>
+  <span class="entry-date"><%= @post.created_at %></span>
+  <span class="meta-sep">by</span>
+  <span class="author vcard"><%= link_to @post.user.name, contact_path(@post.user.contact) %></span> 
+  <span class="meta-sep">in</span>
+  <span class="cat-links"><%= @post.category.name %></span>
+</div>
+<div class="entry-content">
+  <p><%= @post.content %></p>
+</div>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

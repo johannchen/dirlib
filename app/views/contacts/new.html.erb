@@ -1,8 +1,4 @@
 <%= render 'directory_sidebar' %> 
 
-<% if params[:profile] %>
-<h1><%= current_user.name %></h1>
-<% else %>
 <h1>New Contact</h1>
-<% end %>
 <%= render 'form' %>

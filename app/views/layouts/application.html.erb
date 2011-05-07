@@ -38,6 +38,7 @@
 <% if current_user %>
 <li class="page_item"><%= link_to 'Profile', user_path(current_user) %></li>
 <li class="page_item"><%= link_to 'Directory', contacts_path %></li>
+<li class="page_item"><%= link_to 'Bulletin', posts_path %></li>
   <% if current_user.admin %>
 <li class="page_item"><%= link_to 'Admin', users_path %></li>
   <% end %>

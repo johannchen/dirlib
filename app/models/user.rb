@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_one :contact
   has_many :relationships
   has_many :contacts, :through => :relationships
+  has_many :posts
 
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :admin
 
