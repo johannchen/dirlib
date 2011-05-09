@@ -1,6 +1,7 @@
 Dirlib::Application.routes.draw do
 
-  resources :categories
+  resources :statuses
+
 
   resources :posts
 
@@ -15,6 +16,10 @@ Dirlib::Application.routes.draw do
 
   resources :groups do
     resources :contacts
+  end
+
+  resources :categories do
+    resources :posts
   end
 
   resources :contacts do

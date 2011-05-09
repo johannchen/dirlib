@@ -12,6 +12,11 @@ class Ability
       can :read, Contact
       can :create, Contact
       can :update, Contact, :id => user.contact_ids 
+      can :manage, Family
+      can :read, Post 
+      can :create, Post 
+      can :update, Post, :id => user.post_ids 
+      
     end
     # Define abilities for the passed in user here. For example:
     #

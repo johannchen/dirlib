@@ -38,6 +38,7 @@ class ContactsController < ApplicationController
 
   def update
     params[:contact][:group_ids] ||= []
+    params[:contact][:status_ids] ||= []
 
     if @contact.update_attributes(params[:contact])
       if @contact.user_id

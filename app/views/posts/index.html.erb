@@ -1,9 +1,10 @@
+<%= render 'bulletin_sidebar' %>
 <h1>Bulletin posts</h1>
-
-<% Category.order(:name).each do |category| %>
-  <ul><strong><%= category.name %></strong>
-    <% category.posts.each do |post| %>
-      <li><%= post.title %></li>
+<% if params[:category_id] %>
+<strong><%= @category.name %></strong><br />
+<% end %>
+  <ul>
+    <% @posts.each do |post| %>
+      <li><%= post.created_at.strftime("%b %d") %> <%= link_to post.title, post %> by <%= link_to post.user.name, contact_path(post.user.contact) %></li>
     <% end %>
   </ul>
-<% end %>

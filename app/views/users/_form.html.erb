@@ -29,7 +29,7 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </div>
-  <% if can? :manage, User %>
+  <% if current_user.admin %>
   <div class="field">
     <%= f.check_box :admin %> <%= f.label :admin %>
   </div>

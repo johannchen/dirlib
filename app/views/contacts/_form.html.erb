@@ -57,16 +57,16 @@
   </div>
   <strong>Status</strong>
   <div class="field">
-    <%= f.check_box :newcomer %> <%= f.label :newcomer %><br />
     <%= f.check_box :member %> <%= f.label :member %><br />
-    <%= f.check_box :staff %> <%= f.label :staff %><br />
-    <%= f.check_box :elder %> <%= f.label :elder %><br />
-    <%= f.check_box :deacon %> <%= f.label :deacon %><br /> 
+    <% for status in Status.order(:name) %>
+      <%= check_box_tag "contact[status_ids][]", status.id, @contact.statuses.include?(status) %>
+      <%= status.name %><br />
+    <% end %>
   </div>
 
   <strong>Groups</strong>
   <div class="field">
-    <% for group in Group.all %>
+    <% for group in Group.order(:name) %>
       <%= check_box_tag "contact[group_ids][]", group.id, @contact.groups.include?(group) %>
       <%= group.name %><br />
     <% end %>

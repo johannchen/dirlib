@@ -1,7 +1,16 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
-  
+ 
+  #TODO: handle archive, report inappropiate 
   def index
+    if params[:search]
+      @posts = Post.search(params[:search])
+    elsif params[:category_id]
+      @category = Category.find(params[:category_id])
+      @posts = @category.posts.order("created_at desc")
+    else
+      @posts = Post.order("created_at desc")
+    end
   end
 
   def show

@@ -1,6 +1,6 @@
-class CategoriesController < ApplicationController
+class StatusesController < ApplicationController
   load_and_authorize_resource
-
+  
   def index
   end
 
@@ -14,10 +14,9 @@ class CategoriesController < ApplicationController
   end
 
   def create
-
     respond_to do |format|
-      if @category.save
-        format.html { redirect_to(@category, :notice => 'Category was successfully created.') }
+      if @status.save
+        format.html { redirect_to(@status, :notice => 'Status was successfully created.') }
       else
         format.html { render :action => "new" }
       end
@@ -26,8 +25,8 @@ class CategoriesController < ApplicationController
 
   def update
     respond_to do |format|
-      if @category.update_attributes(params[:category])
-        format.html { redirect_to(@category, :notice => 'Category was successfully updated.') }
+      if @status.update_attributes(params[:status])
+        format.html { redirect_to(@status, :notice => 'Status was successfully updated.') }
       else
         format.html { render :action => "edit" }
       end
@@ -35,10 +34,10 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category.destroy
+    @status.destroy
 
     respond_to do |format|
-      format.html { redirect_to(categories_url) }
+      format.html { redirect_to(statuses_url) }
     end
   end
 end

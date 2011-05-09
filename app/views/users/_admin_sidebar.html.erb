@@ -11,10 +11,22 @@
         <li><%= link_to 'Add group', new_group_path %></li>
     </ul>
   <br />
+  <h3 class="widget-title">Statuses</h3>   
+    <ul>
+        <li><%= link_to 'Show statuses', statuses_path %></li>
+        <li><%= link_to 'Add status', new_status_path %></li>
+    </ul>
+  <br />
   <h3 class="widget-title">Contacts</h3>   
     <ul>
         <li><%= link_to 'Show removed contacts', removed_contacts_path %></li>
         <li><%= link_to 'Show families', families_path %></li>
+    </ul>
+  <br />
+  <h3 class="widget-title">Categories</h3>   
+    <ul>
+        <li><%= link_to 'Show categories', categories_path %></li>
+        <li><%= link_to 'Add categories', new_category_path %></li>
     </ul>
 <% end %>
 

@@ -34,8 +34,11 @@ class UsersController < ApplicationController
   end
 
   def update
+    params[:user].delete(:admin) unless current_user.admin
     respond_to do |format|
       if @user.update_attributes(params[:user])
+        # email confirmation to user
+        UserMailer.registration_confirmation(@user).deliver
         format.html { redirect_to(@user, :notice => 'User was successfully updated.')}
       else
         format.html { render :action => "edit" }
