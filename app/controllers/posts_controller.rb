@@ -4,12 +4,12 @@ class PostsController < ApplicationController
   #TODO: handle archive, report inappropiate 
   def index
     if params[:search]
-      @posts = Post.search(params[:search])
+      @posts = Post.search(params[:search]).page(params[:page])
     elsif params[:category_id]
       @category = Category.find(params[:category_id])
-      @posts = @category.posts.order("created_at desc")
+      @posts = @category.posts.order("created_at desc").page(params[:page])
     else
-      @posts = Post.order("created_at desc")
+      @posts = Post.order("created_at desc").page(params[:page])
     end
   end
 

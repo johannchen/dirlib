@@ -3,13 +3,15 @@ class ContactsController < ApplicationController
 
   def index
     if params[:search]
-      @contacts = Contact.search(params[:search])
+      @contacts = Contact.search(params[:search]).page(params[:page]).per(5)
     elsif params[:group_id]
       @group = Group.find(params[:group_id])
-      @contacts = @group.contacts.active
+      @contacts = @group.contacts.active.page(params[:page]).per(5)
     else
-      @contacts = current_user.contacts.active
+      @contacts = current_user.contacts.active.page(params[:page]).per(5)
     end
+
+    @email_alias = @contacts.map(&:email).join(', ')
   end
 
   def show

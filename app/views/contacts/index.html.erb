@@ -1,10 +1,11 @@
 <%= render 'directory_sidebar' %>
-
-<h1>Directory</h1>
-
+<h1>
 <% if params[:group_id] %>
-<h2><%= @group.name %></h2>
+<%= @group.name %>
+<% else %>
+My Contacts
 <% end %>
+</h1>
 
 <table>
   <tr>
@@ -24,3 +25,11 @@
   </tr>
 <% end %>
 </table>
+<%= paginate @contacts %>
+
+<br />
+<br />
+<div id="email_alias">
+<strong>Email Alias</strong>: 
+<%= @email_alias %>
+</div>

@@ -25,6 +25,10 @@
     <%= f.select :gender, [['', nil], ['Male', 'Male'], ['Female', 'Female']]%>
   </div>
   <div class="field">
+    <%= f.label :family %> (<%= link_to "new family", new_family_path %>)<br />
+    <%= f.select :family_id, Family.order(:name).map {|family| [family.name, family.id]}, {:include_blank => true} %>
+  </div>
+  <div class="field">
     <%= f.label :cell_phone %> (digits only e.g 5301234567) <br />
     <%= f.phone_field :cell_phone, :size => 10 %>
   </div>
@@ -70,10 +74,6 @@
       <%= check_box_tag "contact[group_ids][]", group.id, @contact.groups.include?(group) %>
       <%= group.name %><br />
     <% end %>
-  </div>
-  <div class="field">
-    <%= f.label :family %> <%= link_to "add new family", new_family_path %><br />
-    <%= f.select :family_id, Family.order(:name).map {|family| [family.name, family.id]}, {:include_blank => true} %>
   </div>
   <div class="field">
     <%= f.label :attend_dccc_since%><br />

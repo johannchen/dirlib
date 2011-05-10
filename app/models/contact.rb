@@ -14,11 +14,11 @@ class Contact < ActiveRecord::Base
   validates_numericality_of :cell_phone, :work_phone, :home_phone, :allow_blank => true
   validates_length_of :cell_phone, :work_phone, :home_phone, :is => 10, :allow_blank => true
 
-  scope :active, where(:active => true)
-  scope :active_non_user, where("user_id is null and email is not null and active is true").order("name")
+  scope :active, where(:active => true).order("first_name")
+  scope :active_non_user, where("user_id is null and email is not null and active is true").order("first_name")
 
   def self.search(search)
-    where(['first_name like ? or last_name like ?', "%#{search}%", "%#{search}%"]) if search
+    where(['first_name like ? or last_name like ?', "%#{search}%", "%#{search}%"]).order("first_name") if search
   end
 
   def address

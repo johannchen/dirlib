@@ -17,6 +17,9 @@ gem 'jquery-rails'
 # authorization
 gem 'cancan'
 
+# pagination
+gem 'kaminari'
+
 # image upload
 #gem 'rmagick'
 #gem 'carrierwave'
