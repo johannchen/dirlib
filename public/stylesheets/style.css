@@ -444,6 +444,7 @@ div.menu li {
 #access ul li.current-menu-parent > a {
 	color: #fff;
 }
+
 * html #access ul li.current_page_item a,
 * html #access ul li.current-menu-ancestor a,
 * html #access ul li.current-menu-item a,

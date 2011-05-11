@@ -8,9 +8,20 @@ $(function() {
     dateFormat: 'yy-mm-dd'
   });
 
-  // TODO: problem on page reload with link_to
-  $(".menu ul").delegate("li", "click", function() {
-    $(this).toggleClass("current_page_item").siblings().removeClass("current_page_item");
+  $("#contact_family_name").autocomplete({
+    source: "/families",
+    minLength: 3
   });
+
+  // TODO: problem on page reload with link_to
+  //  $(".menu ul").delegate("li", "click", function() {
+  //  $(this).toggleClass("current_page_item").siblings().removeClass("current_page_item");
+  //});
+
+  var path = location.pathname;
+
+  if(path) 
+    $('#access ul li a[href$="' + path + '"]').attr('class', 'current_page_item');
+  
 });
 

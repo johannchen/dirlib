@@ -25,8 +25,8 @@
     <%= f.select :gender, [['', nil], ['Male', 'Male'], ['Female', 'Female']]%>
   </div>
   <div class="field">
-    <%= f.label :family %> (<%= link_to "new family", new_family_path %>)<br />
-    <%= f.select :family_id, Family.order(:name).map {|family| [family.name, family.id]}, {:include_blank => true} %>
+    <%= f.label :family_name %> (e.g. John and Mary Lee)<br />
+    <%= f.text_field :family_name %>
   </div>
   <div class="field">
     <%= f.label :cell_phone %> (digits only e.g 5301234567) <br />

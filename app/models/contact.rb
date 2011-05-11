@@ -44,6 +44,14 @@ class Contact < ActiveRecord::Base
     self.groups.map(&:name).join(', ') if self.groups
   end
 
+  def family_name
+    family.name if family
+  end
+
+  def family_name=(name)
+    self.family = Family.find_or_create_by_name(name) unless name.blank?
+  end
+
   def family_members
     self.family.contacts.map(&:first_name).join(', ') if self.family_id
   end
