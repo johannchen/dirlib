@@ -1,5 +1,7 @@
 Dirlib::Application.routes.draw do
 
+  resources :books
+
   resources :statuses
 
 

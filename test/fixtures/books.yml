@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  google_book_id: MyString
+  title: MyString
+  owner_id: 1
+  borrower_id: 1
+
+two:
+  google_book_id: MyString
+  title: MyString
+  owner_id: 1
+  borrower_id: 1

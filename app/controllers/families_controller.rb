@@ -2,7 +2,7 @@ class FamiliesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    # @families = Family.where(['name like ?', "%#{params[:search]}%"])
+    @families = Family.where(['name like ?', "%#{params[:term]}%"])
     respond_to do |format|
       format.html
       format.json { render :json => @families.order(:name).map(&:name) } 

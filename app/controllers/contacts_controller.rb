@@ -17,7 +17,6 @@ class ContactsController < ApplicationController
   def show
   end
 
-  # TODO: add family in the same form if family is not in the dropdown  
   def new
   end
 
