@@ -1,5 +1,9 @@
 Dirlib::Application.routes.draw do
 
+  get "google_books/index"
+
+  get "google_books/new"
+
   resources :books
 
   resources :statuses
