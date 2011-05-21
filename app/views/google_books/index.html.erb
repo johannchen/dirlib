@@ -1,2 +1,37 @@
-<h1>GoogleBooks#index</h1>
-<p>Find me in app/views/google_books/index.html.erb</p>
+<ul>
+<% @books.each do |book| %>
+  <li class="g knavi" style="position: relative;">
+    <div style="padding-bottom:2px">
+      <h3 class="r"><em><%= book['volumeInfo']['title'] %></em></h3>
+    </div>
+    <div class="s">
+      <table class="ts" width="100%">
+        <tbody>
+          <tr>
+            <td class="bkst" width="1">
+              <img src="" alt align="middle" border="1" height="80" width="53"> 
+            </td> 
+            <td valign="top" style="padding-left:7px">
+              <div>
+                <span class="gl">
+                  Authors - year - pages
+                </span>
+                <br>
+
+                <table>
+                  <tbody>
+                    <tr><td>
+description
+                    </td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </li>
+<% end %>
+</ul>
