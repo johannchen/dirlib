@@ -1,0 +1,25 @@
+<% unless @google_books.nil? %>
+<ul>
+<% @google_books.each do |book| %>
+  <li>
+    <em><%= book['volumeInfo']['title'] %></em> <%= button_to "add to my books", :action => "new", :remote => true %><br />
+    <table>
+      <tbody>
+        <tr>
+          <td>
+          <div class="thumbnail">
+            <img src="<%= book['volumeInfo']['imageLinks']['smallThumbnail'] if book['volumeInfo']['imageLinks'] %>"> 
+          </div>
+          <div class="gl">
+                  <%= book["volumeInfo"]["authors"].join(", ") %> - <%= book["volumeInfo"]["publishedDate"] %> - <%= book["volumeInfo"]["pageCount"] %> pages
+          </div>
+<%= raw book["volumeInfo"]["description"] %>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+
+  </li>
+<% end %>
+</ul>
+<% end %>

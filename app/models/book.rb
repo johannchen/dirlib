@@ -11,9 +11,12 @@ class Book < ActiveRecord::Base
   end
 
   #TODO: map books
-  def self.search_google_books
-    uri = "https://www.googleapis.com/books/v1/volumes?q=mere+christianity" 
-    books = ActiveSupport::JSON.decode(open(uri).read)
-    books['items']
+  def self.search_google_books(q)
+    if q
+      q.gsub! /\s+/, '+'
+      uri = "https://www.googleapis.com/books/v1/volumes?q=#{q}" 
+      books = ActiveSupport::JSON.decode(open(uri).read)
+      books['items']
+    end
   end
 end

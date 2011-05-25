@@ -3,7 +3,7 @@ class Ability
 
   def initialize(user)
     # no guest allow after admin created
-    # user ||= User.new # guest user (not logged in)
+    user ||= User.new # guest user (not logged in)
     if user.admin?
       can :manage, :all
     else
@@ -16,7 +16,6 @@ class Ability
       can :read, Post 
       can :create, Post 
       can :update, Post, :id => user.post_ids 
-      
     end
     # Define abilities for the passed in user here. For example:
     #

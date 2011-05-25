@@ -23,14 +23,6 @@ $(function() {
   if(path) 
     $('#access ul li a[href="' + path + '"]').parent().attr('class', 'current_page_item');
 
-  $('#google_book_search').submit(function() {
-    $.get('https://www.googleapis.com/books/v1/volumes?q=' + $("input:first").val(),
-      function(data) {
-        $('#books').html(data);
-        alert('Load was performed.');
-      }, "json");
-    return false;
-  });  
 });
 
 

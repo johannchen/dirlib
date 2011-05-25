@@ -33,3 +33,15 @@ span.ui-icon {
   float: left;
   margin-right: 4px;
 }
+
+.thumbnail {
+  float: left;
+  width: 53px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.gl {
+  color: #767676;
+}
+

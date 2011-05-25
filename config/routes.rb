@@ -2,7 +2,7 @@ Dirlib::Application.routes.draw do
 
   get "google_books/index"
 
-  get "google_books/new"
+  get "google_books/show"
 
   resources :books
 

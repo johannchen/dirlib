@@ -1,9 +1,9 @@
 <h1>New Book</h1>
-<%= form_tag google_books_path, :method => :get, :remote => true do %>
+<%= form_tag new_book_path, :method => :get, :remote => true do %>
   <%= text_field_tag(:q) %>
   <%= submit_tag("Search", :name => nil) %>
 <% end %>
-
+<br />
 <div id="books">
-  <%= render 'google_books/index' %>
+  <%= render :partial => 'google_books', :collection => @google_books %>
 </div>
