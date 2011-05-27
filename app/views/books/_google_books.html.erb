@@ -2,7 +2,11 @@
 <ul>
 <% @google_books.each do |book| %>
   <li>
-    <em><%= book['volumeInfo']['title'] %></em> <%= button_to "add to my books", :action => "new", :remote => true %><br />
+    <em><%= book['volumeInfo']['title'] %></em> 
+    <%= form_tag books_path do  %>
+      <%= hidden_field_tag 'google_book_id', book['id'] %>
+      <%= submit_tag 'add to my books' %>
+    <% end %>
     <table>
       <tbody>
         <tr>
