@@ -7,6 +7,7 @@ class Contact < ActiveRecord::Base
   has_many :groups, :through => :contact_groups
   has_many :contact_statuses, :dependent => :delete_all
   has_many :statuses, :through => :contact_statuses
+  has_many :books
 
   validates_presence_of :first_name, :last_name, :gender
   validates_uniqueness_of :email, :allow_nil => true

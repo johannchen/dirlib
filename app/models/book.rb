@@ -1,6 +1,15 @@
 class Book < ActiveRecord::Base
   require 'open-uri'
 
+  belongs_to :user
+  belongs_to :contact
+
+  validates_presence_of :title, :authors
+
+  def self.search(search)
+    where(['title like ? or authors like ?', "%#{search}%", "%#{search}%"]).order("title") if search
+  end
+
   #TODO: handle exception for open uri 
   def self.find_google_book(vid)
     uri = "https://www.googleapis.com/books/v1/volumes/" + vid
@@ -12,7 +21,7 @@ class Book < ActiveRecord::Base
     book["description"] = google_book["volumeInfo"]["description"]
     book["thumbnail"] = google_book["volumeInfo"]["imageLinks"]["smallThumbnail"]
     book["pages"] = google_book["volumeInfo"]["pageCount"]
-    book["published_date"] = google_book["volumeInfo"]["publishedDate"]
+    book["published_year"] = google_book["volumeInfo"]["publishedDate"]
     book
   end
 
@@ -25,4 +34,14 @@ class Book < ActiveRecord::Base
       books['items']
     end
   end
+
+  def owner_name 
+    #User.find(user_id).name unless user_id.blank?
+    user.name if user 
+  end
+
+  def borrower_name
+    contact.name if contact
+  end
+
 end

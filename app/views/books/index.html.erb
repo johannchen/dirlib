@@ -1,18 +1,24 @@
+<%= render 'library_sidebar' %>
 <h1>Books</h1>
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>Title</th>
+    <th>Authors</th>
+    <th>Owner</th>
+    <th>Borrower</th>
     <th></th>
   </tr>
 
 <% @books.each do |book| %>
 
   <tr>
-    <td><%= book.title%></td>
+    <td><%= book.title %></td>
+    <td><%= book.authors %></td>
+    <td><%= link_to book.owner_name, book.user.contact %></td>
+    <td><%= link_to book.borrower_name, book.contact unless book.contact_id.blank? %></td>
     <td><%= link_to 'Show', book%> | 
-    <%= link_to 'Edit', edit_book_path(book) %> | 
-    <%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete %></td>
+    <%= link_to 'Edit', edit_book_path(book) %>
   </tr>
 <% end %>
 </table>

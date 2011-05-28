@@ -1,3 +1,4 @@
+<%= render 'library_sidebar' %>
 <h1>New Book</h1>
 <%= form_tag new_book_path, :method => :get, :remote => true do %>
   <%= text_field_tag(:q) %>

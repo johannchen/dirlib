@@ -1,2 +1,23 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<%= render 'library_sidebar' %>
+<h1><%= @book.title %></h1>
+<p>
+<% unless @book.thumbnail.blank? %>
+<div class="thumbnail">
+  <img src="<%= @book.thumbnail %>"> 
+</div>
+<% end %>
+<div class="gl">
+  <%= @book.authors %> - <%= @book.published_year %> - <%= @book.pages %> pages
+</div>
+<%= raw @book.description %>
+</p>
+
+<em>Owner:</em> <%= link_to @book.owner_name, @book.user.contact %> <br />
+<% if @book.contact_id.blank? %>
+This book is <em>available</em> to borrow. Please contact the owner for more information.
+<% else %>
+<em>Borrowed By:</em> <%= link_to @book.borrower_name, @book.contact %> on <%= @book.borrowed_date %>
+<% end %>
+<br />
+<%= link_to 'Eidt Book', edit_book_path(@book) %>
+

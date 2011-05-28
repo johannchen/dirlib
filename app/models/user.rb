@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :relationships
   has_many :contacts, :through => :relationships
   has_many :posts
+  has_many :books
 
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :admin
 

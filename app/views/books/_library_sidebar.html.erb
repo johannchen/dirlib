@@ -1,0 +1,21 @@
+<% content_for :sidebar do %>
+<li class="widget-container widget_search">
+<h3>Search books by title or author</h3>
+<% form_tag books_path, :method => 'get' do %>
+  <div><label class="screen-reader-text" for="search">Search for:</label> 
+  <%= text_field_tag :search, params[:search] %> 
+  <%= submit_tag "Search", :name => nil %>
+  </div> 
+<% end %>
+</li>
+<li class="widget-container"> 
+  <h3 class="widget-title">Books</h3>   
+    <ul>
+        <li><%= link_to 'Show my books', books_path %></li>
+        <li><%= link_to 'Show books I borrowed', books_path %></li>
+        <li><%= link_to 'Add book', new_book_path %></li>
+    </ul>
+</li>
+<% end %>
+
+

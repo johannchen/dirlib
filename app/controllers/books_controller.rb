@@ -2,6 +2,11 @@ class BooksController < ApplicationController
   load_and_authorize_resource
 
   def index
+    if params[:search]
+      @books = Book.search(params[:search]).page(params[:page]).per(5)
+    else 
+      @books = current_user.books.page(params[:page]).per(5)
+    end
   end
 
   def new
@@ -11,6 +16,9 @@ class BooksController < ApplicationController
   def show
   end
 
+  def edit
+
+  end
   def create
     # create book from google api
     unless params[:google_book_id].nil?
@@ -18,7 +26,7 @@ class BooksController < ApplicationController
       @book = Book.new(google_book)
     end 
 
-    #TODO: create book from regular form
+    #create book from regular form
     @book.owner_id = current_user.id
     
     if @book.save

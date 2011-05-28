@@ -10,20 +10,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110524235207) do
+ActiveRecord::Schema.define(:version => 20110528001307) do
 
   create_table "books", :force => true do |t|
     t.string   "google_book_id"
     t.string   "title"
-    t.integer  "owner_id"
-    t.integer  "borrower_id"
+    t.integer  "user_id"
+    t.integer  "contact_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "authors"
-    t.date     "published_date"
     t.text     "description"
     t.integer  "pages"
     t.string   "thumbnail"
+    t.boolean  "lost"
+    t.date     "borrowed_date"
+    t.boolean  "available"
+    t.string   "published_year"
   end
 
   create_table "categories", :force => true do |t|
