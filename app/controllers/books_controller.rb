@@ -35,4 +35,12 @@ class BooksController < ApplicationController
       render "new"
     end 
   end
+
+  def update
+    if @book.update_attributes(params[:book])
+      redirect_to @book, :notice => 'Book was successfully updated.'
+    else
+      render :action => "edit"
+    end
+  end
 end

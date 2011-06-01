@@ -7,8 +7,15 @@ class ContactsController < ApplicationController
     elsif params[:group_id]
       @group = Group.find(params[:group_id])
       @contacts = @group.contacts.active.page(params[:page]).per(5)
+    elsif params[:term]
+      @contacts = Contact.search(params[:term])
     else
       @contacts = current_user.contacts.active.page(params[:page]).per(5)
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => @contacts.order(:first_name).map(&:name_email) } 
     end
 
     @email_alias = @contacts.map(&:email).join(', ')

@@ -44,4 +44,19 @@ class Book < ActiveRecord::Base
     contact.name if contact
   end
 
+  def borrower_name_email
+    contact.name_email if contact
+  end
+
+  def borrower_name_email=(name_email)
+    unless name_email.blank?  
+      # name_email format e.g. John Wu <johnwu@mail.com>
+      # parse name_email
+      s = name_email.split
+      first_name = s.first
+      last_name = s[1]
+      email = s.last.gsub(/<|>/, '')
+      self.contact = Contact.find_or_create_by_first_name_and_last_name_and_email(first_name, last_name, email)
+    end
+  end
 end

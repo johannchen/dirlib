@@ -9,7 +9,7 @@ class Contact < ActiveRecord::Base
   has_many :statuses, :through => :contact_statuses
   has_many :books
 
-  validates_presence_of :first_name, :last_name, :gender
+  validates_presence_of :first_name, :last_name, :email
   validates_uniqueness_of :email, :allow_nil => true
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   validates_numericality_of :cell_phone, :work_phone, :home_phone, :allow_blank => true
@@ -38,7 +38,7 @@ class Contact < ActiveRecord::Base
   end
 
   def name_email
-    name + " - " + email
+    name + " <" + email + ">"
   end
 
   def group_names
