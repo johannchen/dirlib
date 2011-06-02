@@ -1,9 +1,11 @@
-<% unless @google_books.nil? %>
+<% if @google_books.nil? %>
+<p>Sorry, no records found in google books search.</p>
+<% else %>
 <ul>
 <% @google_books.each do |book| %>
   <li>
-    <em><%= book['volumeInfo']['title'] %></em> 
     <%= form_tag books_path do  %>
+      <div class="google_book_title"><%= book['volumeInfo']['title'] %></div>
       <%= hidden_field_tag 'google_book_id', book['id'] %>
       <%= submit_tag 'add to my books' %>
     <% end %>
@@ -15,9 +17,11 @@
             <img src="<%= book['volumeInfo']['imageLinks']['smallThumbnail'] if book['volumeInfo']['imageLinks'] %>"> 
           </div>
           <div class="gl">
-                  <%= book["volumeInfo"]["authors"].join(", ") %> - <%= book["volumeInfo"]["publishedDate"] %> - <%= book["volumeInfo"]["pageCount"] %> pages
+            <%= book["volumeInfo"]["authors"].join(", ") + " - " unless book["volumeInfo"]["authors"].blank? %> 
+            <%= book["volumeInfo"]["publishedDate"].to_s + " - " unless book["volumeInfo"]["publishedDate"].blank? %> 
+            <%= book["volumeInfo"]["pageCount"].to_s + " pages" unless book["volumeInfo"]["pageCount"].blank?  %> 
           </div>
-<%= raw book["volumeInfo"]["description"] %>
+<%= raw book["volumeInfo"]["description"] unless book["volumeInfo"]["description"].blank? %>
             </td>
           </tr>
         </tbody>

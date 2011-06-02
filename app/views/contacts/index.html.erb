@@ -28,8 +28,9 @@ My Contacts
 <%= paginate @contacts %>
 
 <br />
-<br />
+<% unless params[:search] and params[:search].blank? %>
 <div id="email_alias">
 <strong>Email Alias</strong>: 
 <%= @email_alias %>
 </div>
+<% end %>

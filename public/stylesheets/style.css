@@ -315,14 +315,17 @@ textarea {
 	padding: 2px;
 }
 a:link {
-	color: #0066cc;
+  color: #0066cc;
+  text-decoration: none;
 }
 a:visited {
-	color: #743399;
+  color: #743399;
+  text-decoration: none;
 }
 a:active,
 a:hover {
-	color: #ff4b33;
+  color: #ff4b33;
+  text-decoration: underline;
 }
 
 /* Text meant only for screen readers */
@@ -522,11 +525,11 @@ div.menu li {
 	font-size: 12px;
 	font-weight: bold;
 	line-height: 18px;
-	padding: 9px 15px;
+	padding: 9px 10px;
 }
 #content tr td {
 	border-top: 1px solid #e7e7e7;
-	padding: 6px 15px;
+	padding: 6px 10px;
 }
 #content tr.odd td {
 	background: #f2f7fc;

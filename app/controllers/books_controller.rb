@@ -4,6 +4,8 @@ class BooksController < ApplicationController
   def index
     if params[:search]
       @books = Book.search(params[:search]).page(params[:page]).per(5)
+    elsif params[:borrow]
+      @books = current_user.contact.books.page(params[:page]).per(5)
     else 
       @books = current_user.books.page(params[:page]).per(5)
     end
@@ -17,8 +19,8 @@ class BooksController < ApplicationController
   end
 
   def edit
-
   end
+
   def create
     # create book from google api
     unless params[:google_book_id].nil?
@@ -27,7 +29,7 @@ class BooksController < ApplicationController
     end 
 
     #create book from regular form
-    @book.owner_id = current_user.id
+    @book.user_id = current_user.id
     
     if @book.save
       redirect_to books_path, :notice => "Book was successfully added!"

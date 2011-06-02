@@ -7,11 +7,13 @@
 </div>
 <% end %>
 <div class="gl">
-  <%= @book.authors %> - <%= @book.published_year %> - <%= @book.pages %> pages
+  <%= @book.authors + " - " unless @book.authors.blank? %> 
+  <%= @book.published_year + " - " unless @book.published_year.blank? %> 
+  <%= @book.pages.to_s + " pages" unless @book.pages.blank? %> 
 </div>
 <%= raw @book.description %>
 </p>
-
+<br />
 <em>Owner:</em> <%= link_to @book.owner_name, @book.user.contact %> <br />
 <% if @book.contact_id.blank? %>
 This book is <em>available</em> to borrow. Please contact the owner for more information.
@@ -19,5 +21,6 @@ This book is <em>available</em> to borrow. Please contact the owner for more inf
 <em>Borrowed By:</em> <%= link_to @book.borrower_name, @book.contact %> on <%= @book.borrowed_date %>
 <% end %>
 <br />
+<% if can? :update, @book %>
 <%= link_to 'Eidt Book', edit_book_path(@book) %>
-
+<% end %>

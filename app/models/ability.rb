@@ -16,6 +16,9 @@ class Ability
       can :read, Post 
       can :create, Post 
       can :update, Post, :id => user.post_ids 
+      can :read, Book
+      can :create, Book
+      can :update, Book, :id => user.book_ids
     end
     # Define abilities for the passed in user here. For example:
     #

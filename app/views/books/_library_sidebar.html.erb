@@ -12,7 +12,7 @@
   <h3 class="widget-title">Books</h3>   
     <ul>
         <li><%= link_to 'Show my books', books_path %></li>
-        <li><%= link_to 'Show books I borrowed', books_path %></li>
+        <li><%= link_to 'Show books I borrowed', books_path(:borrow => "true") %></li>
         <li><%= link_to 'Add book', new_book_path %></li>
     </ul>
 </li>

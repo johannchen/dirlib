@@ -5,6 +5,7 @@ class Book < ActiveRecord::Base
   belongs_to :contact
 
   validates_presence_of :title, :authors
+  validates_format_of :borrower_name_email, :with => /^[a-z]+\s[a-z]+\s<([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})>/i, :on => :update
 
   def self.search(search)
     where(['title like ? or authors like ?', "%#{search}%", "%#{search}%"]).order("title") if search
