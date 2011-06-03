@@ -5,9 +5,9 @@ class BooksController < ApplicationController
     if params[:search]
       @books = Book.search(params[:search]).page(params[:page]).per(5)
     elsif params[:borrow]
-      @books = current_user.contact.books.page(params[:page]).per(5)
+      @books = current_user.contact.books.order("title").page(params[:page]).per(5)
     else 
-      @books = current_user.books.page(params[:page]).per(5)
+      @books = current_user.books.order("title").page(params[:page]).per(5)
     end
   end
 
@@ -34,7 +34,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to books_path, :notice => "Book was successfully added!"
     else 
-      render "new"
+      render "new", :notice => "Sorry, somehow it fails to add the book."
     end 
   end
 

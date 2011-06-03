@@ -10,13 +10,13 @@ class ContactsController < ApplicationController
       contact_alias = @group.contacts.active
       @contacts = contact_alias.page(params[:page]).per(5)
     elsif params[:term]
-      @contacts = Contact.search(params[:term])
+      @contacts = Contact.auto_complete(params[:term])
     else
       contact_alias = current_user.contacts.active
       @contacts = contact_alias.page(params[:page]).per(5)
     end
 
-    @email_alias = contact_alias.map(&:name_email).join(', ')
+    @email_alias = contact_alias.map(&:name_email).join(', ') unless params[:term]
 
     respond_to do |format|
       format.html

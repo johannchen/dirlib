@@ -9,17 +9,22 @@ class Contact < ActiveRecord::Base
   has_many :statuses, :through => :contact_statuses
   has_many :books
 
-  validates_presence_of :first_name, :last_name, :email
+  validates_presence_of :first_name, :last_name
   validates_uniqueness_of :email, :allow_nil => true
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :allow_blank => true
   validates_numericality_of :cell_phone, :work_phone, :home_phone, :allow_blank => true
   validates_length_of :cell_phone, :work_phone, :home_phone, :is => 10, :allow_blank => true
 
+  scope :with_email, where("email is not null and email != ''")
   scope :active, where(:active => true).order("first_name")
-  scope :active_non_user, where("user_id is null and email is not null and active is true").order("first_name")
+  scope :active_non_user, where("user_id is null").active.with_email.order("first_name")
 
   def self.search(search)
     where(['first_name like ? or last_name like ?', "%#{search}%", "%#{search}%"]).order("first_name") if search
+  end
+
+  def self.auto_complete(term)
+    where(['first_name like ? or last_name like ?', "%#{term}%", "%#{term}%"]).with_email.order("first_name") if term
   end
 
   def address

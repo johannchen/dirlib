@@ -17,13 +17,16 @@ class Book < ActiveRecord::Base
     google_book = ActiveSupport::JSON.decode(open(uri).read)
     book = Hash.new
     book["google_book_id"] = vid
-    book["title"] = google_book["volumeInfo"]["title"]
-    book["authors"] = google_book["volumeInfo"]["authors"].join(", ")
-    book["description"] = google_book["volumeInfo"]["description"]
-    book["thumbnail"] = google_book["volumeInfo"]["imageLinks"]["smallThumbnail"]
-    book["pages"] = google_book["volumeInfo"]["pageCount"]
-    book["published_year"] = google_book["volumeInfo"]["publishedDate"]
+    book["title"] = google_book["volumeInfo"]["title"] unless google_book["volumeInfo"]["title"].blank?
+    book["authors"] = google_book["volumeInfo"]["authors"].join(", ") unless google_book["volumeInfo"]["authors"].blank?
+    book["description"] = google_book["volumeInfo"]["description"] unless google_book["volumeInfo"]["description"].blank?
+    book["thumbnail"] = google_book["volumeInfo"]["imageLinks"]["smallThumbnail"] unless google_book["volumeInfo"]["imageLinks"]["smallThumbnail"].blank?
+    book["pages"] = google_book["volumeInfo"]["pageCount"] unless google_book["volumeInfo"]["pageCount"].blank?
+    book["published_year"] = google_book["volumeInfo"]["publishedDate"] unless google_book["volumeInfo"]["publishedDate"].blank?
     book
+
+    rescue
+      book = ""
   end
 
   #TODO: map books
