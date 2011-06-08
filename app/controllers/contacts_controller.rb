@@ -50,7 +50,8 @@ class ContactsController < ApplicationController
   def update
     params[:contact][:group_ids] ||= []
     params[:contact][:status_ids] ||= []
-
+  
+    @contact.family_id = nil if params[:family_name].blank?
     if @contact.update_attributes(params[:contact])
       if @contact.user_id
         redirect_to user_path(current_user), :notice => 'Profile was successfully updated.'

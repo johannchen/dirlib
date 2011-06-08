@@ -39,10 +39,16 @@ class BooksController < ApplicationController
   end
 
   def update
+    @book.contact_id = nil if params[:borrower_name_email].blank?
     if @book.update_attributes(params[:book])
       redirect_to @book, :notice => 'Book was successfully updated.'
     else
       render :action => "edit"
     end
+  end
+
+  def destroy
+    @book.destroy
+    redirect_to books_url, :notice => 'Book has been successfully deleted.'
   end
 end
