@@ -13,6 +13,18 @@ $(function() {
     minLength: 3
   });
 
+  $("#contact_show_emails").click(function(e) {
+    e.preventDefault();
+    $("#contact_email_alias").show();
+    $(this).hide();
+  }); 
+
+  $("#contact_hide_emails").click(function(e) {
+    e.preventDefault();
+    $("#contact_email_alias").hide();
+    $("#contact_show_emails").show();
+  }); 
+
   $("#book_borrower_name_email").autocomplete({
     source: "/contacts",
     minLength: 3

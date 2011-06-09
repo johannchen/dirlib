@@ -14,5 +14,6 @@
 </div>
 
 <% if can? :update, @post %>
-<%= link_to 'Edit', edit_post_path(@post) %>
+<%= link_to 'Edit post', edit_post_path(@post) %> |
+<%= link_to 'Destroy post', @post, :confirm => 'Are you sure?', :method => :delete %></td>
 <% end %>

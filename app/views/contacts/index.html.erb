@@ -29,8 +29,9 @@ My Contacts
 
 <br />
 <% unless params[:search] and params[:search].blank? %>
-<div id="email_alias">
-<strong>Email Alias</strong>: 
+<a href="#" id="contact_show_emails">Show email alias</a>
+<div id="contact_email_alias" style="display: none">
+<a href="#" id="contact_hide_emails">Hide email alias</a><br />
 <%= @email_alias %>
 </div>
 <% end %>

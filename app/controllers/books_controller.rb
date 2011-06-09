@@ -6,7 +6,9 @@ class BooksController < ApplicationController
       @books = Book.search(params[:search]).page(params[:page]).per(5)
     elsif params[:borrow]
       @books = current_user.contact.books.order("title").page(params[:page]).per(5)
-    else 
+    elsif params[:user_id]
+      @books = User.find(params[:user_id]).books.order("title").page(params[:page]).per(5)
+    else
       @books = current_user.books.order("title").page(params[:page]).per(5)
     end
   end

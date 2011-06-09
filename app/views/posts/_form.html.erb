@@ -1,13 +1,13 @@
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+      <div class="ui-widget">
+        <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+          <% for message in @post.errors.full_messages %>
+          <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span><%= message %><br />
+          <% end %>
+        </div>
+      </div>
     </div>
   <% end %>
 

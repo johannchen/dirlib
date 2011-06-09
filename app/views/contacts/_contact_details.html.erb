@@ -29,10 +29,19 @@
   <li><%= @contact.address %></li>
   <% end %>
 
-  <% if can? :update, @contact %>
   <div class="new-line"></div>
-  <li><span class="ui-icon ui-icon-pencil"></span><%= link_to "Edit contact", edit_contact_path(@contact) %></li>
+  <li>
+  <% if can? :update, @contact %>
+    <span class="ui-icon ui-icon-pencil"></span>
+    <%= link_to "Edit contact", edit_contact_path(@contact) %><br />
   <% end %>
+  <% unless @contact.user_id.blank? %>
+    <span class="ui-icon ui-icon-bookmark"></span>
+    <%= link_to "Show my library", books_path(:user_id => @contact.user_id) %>
+  <% end %>
+  </li>
+
+  
 
   <% unless @contact.attend_since.blank? %>
   <div class="new-line"></div>

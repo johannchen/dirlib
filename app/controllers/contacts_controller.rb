@@ -16,7 +16,7 @@ class ContactsController < ApplicationController
       @contacts = contact_alias.page(params[:page]).per(5)
     end
 
-    @email_alias = contact_alias.map(&:name_email).join(', ') unless params[:term]
+    @email_alias = contact_alias.with_email.map(&:name_email).join(', ') unless params[:term]
 
     respond_to do |format|
       format.html

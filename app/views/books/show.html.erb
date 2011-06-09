@@ -22,6 +22,6 @@ This book is <em>available</em> to borrow. Please contact the owner for more inf
 <% end %>
 <br />
 <% if can? :update, @book %>
-<%= link_to 'Eidt Book', edit_book_path(@book) %> |
-<%= link_to 'Destroy Book', @book, :confirm => 'Are you sure?', :method => :delete %></td>
+<%= link_to 'Eidt book', edit_book_path(@book) %> |
+<%= link_to 'Destroy book', @book, :confirm => 'Are you sure?', :method => :delete %></td>
 <% end %>
