@@ -73,7 +73,7 @@ class ContactsController < ApplicationController
 
   # list of removed contacts
   def removed
-    @contacts = Contact.where(:active => false).order(:name)
+    @contacts = Contact.where(:active => false).order(:first_name)
   end
 
   def activate

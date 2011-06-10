@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @contact = @user.contact
+    @contact = current_user.contact
   end
 
   def create

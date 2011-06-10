@@ -1,13 +1,10 @@
 Dirlib::Application.routes.draw do
 
-  get "google_books/index"
-
-  get "google_books/show"
+  match "profile" => "users#show"  
 
   resources :books
 
   resources :statuses
-
 
   resources :posts
 

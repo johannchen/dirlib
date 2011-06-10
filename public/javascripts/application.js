@@ -39,11 +39,22 @@ $(function() {
   //  $(this).toggleClass("current_page_item").siblings().removeClass("current_page_item");
   //});
 
-  var path = location.pathname;
+  var path = location.pathname.split("/");
+  var menu_path = path[1];
+  if(path[1] == "groups" && path[3] == "contacts") {
+    menu_path = "contacts";
+  } else if(path[1] == "categories" && path[3] == "posts") {
+    menu_path = "posts";
+  } else if(path[1] == "groups" || path[1] == "statuses" || path[1] == "categories" || path[1] == "families" || path[2] == "removed") {
+    menu_path = "users";
+  }
 
-  if(path) 
-    $('#access ul li a[href="' + path + '"]').parent().attr('class', 'current_page_item');
+  console.log(menu_path);
 
+  if(menu_path != "") {
+    $('#access ul li').removeClass("current_page_item");
+    $('#access ul li a[href="/' + menu_path + '"]').parent().attr('class', 'current_page_item');
+  }
 });
 
 
