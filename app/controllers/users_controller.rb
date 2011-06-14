@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def create
     # pre populate name and email from selected contact
     contact = Contact.find(params[:contact][:id])
-    @user = User.new(:first_name => contact.first_name, :last_name => contact.last_name, :email => contact.email) 
+    @user = User.new(:first_name => contact.first_name, :last_name => contact.last_name, :email => contact.email, :admin => params[:user][:admin]) 
     # random auto generate password
     @user.new_random_password 
     if @user.save

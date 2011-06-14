@@ -16,7 +16,10 @@ class ContactsController < ApplicationController
       @contacts = contact_alias.page(params[:page]).per(5)
     end
 
-    @email_alias = contact_alias.with_email.map(&:name_email).join(', ') unless params[:term]
+    unless params[:term]
+      @contacts_count = contact_alias.size 
+      @email_alias = contact_alias.with_email.map(&:name_email).join(', ') 
+    end
 
     respond_to do |format|
       format.html
@@ -35,7 +38,6 @@ class ContactsController < ApplicationController
       if @contact.user_id
         redirect_to user_path(current_user), :notice => 'Profile was created.'
       else
-        # create contact under user
         @contact.users << current_user
         redirect_to @contact, :notice => 'Contact was created.'
       end

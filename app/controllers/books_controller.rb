@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   load_and_authorize_resource
+  after_filter :assign_contact_to_user, :only => [:create, :update]
 
   def index
     if params[:search]
@@ -53,4 +54,14 @@ class BooksController < ApplicationController
     @book.destroy
     redirect_to books_url, :notice => 'Book has been successfully deleted.'
   end
+
+private
+  def assign_contact_to_user
+    # assign contact to current user if borrower is new
+    # if the borrower has no relationship, the borrower is a new contact
+    if !@book.contact_id.blank? and Relationship.where(:contact_id => @book.contact_id).blank?
+      Relationship.create!(:user_id => current_user.id, :contact_id => @book.contact_id)
+    end
+  end
+
 end
