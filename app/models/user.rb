@@ -5,8 +5,9 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :books
 
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :admin
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :admin, :contact_tokens
 
+  attr_reader :contact_tokens
   attr_accessor :password
   before_save :encrypt_password
 
@@ -14,6 +15,10 @@ class User < ActiveRecord::Base
   validates_presence_of :password, :on => :create
   validates_presence_of :email, :first_name, :last_name
   validates_uniqueness_of :email
+
+  def contact_tokens=(ids)
+    self.contact_ids = ids.split(",")
+  end
 
   def self.authenticate(email, password)
     user = find_by_email(email)

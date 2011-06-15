@@ -10,20 +10,25 @@ class ContactsController < ApplicationController
       contact_alias = @group.contacts.active
       @contacts = contact_alias.page(params[:page]).per(5)
     elsif params[:term]
+      # jquery auto complete
       @contacts = Contact.auto_complete(params[:term])
+    elsif params[:q]
+      # token input auto complete
+      @contacts = Contact.search(params[:q])
     else
       contact_alias = current_user.contacts.active
       @contacts = contact_alias.page(params[:page]).per(5)
     end
 
-    unless params[:term]
+    unless params[:term] or params[:q]
       @contacts_count = contact_alias.size 
       @email_alias = contact_alias.with_email.map(&:name_email).join(', ') 
     end
 
     respond_to do |format|
       format.html
-      format.json { render :json => @contacts.order(:first_name).map(&:name_email) } 
+      format.json { render :json => @contacts.order(:first_name).map{|c| {"id" => c.id, "name" => c.name_email}} } 
+      #format.json { render :json => @contacts.order(:first_name).map(&:attributes) } 
     end
   end
 
