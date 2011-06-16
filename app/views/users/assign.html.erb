@@ -1,3 +1,5 @@
+<%= render 'admin_sidebar' %>
+
 <h1><%= @user.name %>'s Contacts</h1>
 
 <%= form_for @user do |f| %>
@@ -13,8 +15,8 @@
 
   <div class="field">
     <%= f.label :contact_tokens, "Contacts" %><br />
-    <%= f.text_field :contact_tokens, "data-pre" => @user.contacts.map{|c| {"id" => c.id, "name" => c.name_email}}.to_json %>
+    <%= f.text_field :contact_tokens, "data-pre" => @user.contacts.order(:first_name).map{|c| {"id" => c.id, "name" => c.name + " - " + c.email}}.to_json %>
   </div>
-  <p class="button"><%= f.submit %></p>
+  <p class="button"><%= f.submit :value => "Update User Contacts" %></p>
 <% end %>
 

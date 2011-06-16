@@ -16,7 +16,7 @@
     <td><%= user.name %></td>
     <td><%= user.email %></td>
     <td><%= "Admin" if user.admin %></td>
-    <td><%= link_to user.contacts.size, edit_relationship_path(user) %></td>
+    <td><%= link_to user.contacts.size, assign_user_path(user) %></td>
     <td>
     <%= link_to 'Edit', edit_user_path(user) %> | 
     <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -16,8 +16,11 @@ Dirlib::Application.routes.draw do
   root :to => "home#index"
 
   resources :sessions
-  resources :users
   resources :families
+
+  resources :users do
+    get 'assign', :on => :member
+  end
 
   resources :groups do
     resources :contacts

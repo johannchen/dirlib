@@ -27,8 +27,8 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render :json => @contacts.order(:first_name).map{|c| {"id" => c.id, "name" => c.name_email}} } 
-      #format.json { render :json => @contacts.order(:first_name).map(&:attributes) } 
+      format.json { render :json => @contacts.order(:first_name).map{|c| {"id" => c.id, "name" => c.name + " - " + c.email}} } if params[:q]
+      format.json { render :json => @contacts.order(:first_name).map(&:name_email) } if params[:term]
     end
   end
 

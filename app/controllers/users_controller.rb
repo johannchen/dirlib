@@ -35,11 +35,20 @@ class UsersController < ApplicationController
 
   def update
     params[:user].delete(:admin) unless current_user.admin
+    params[:user].delete(:password) if params[:user][:password].blank?
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        # email confirmation to user
-        UserMailer.registration_confirmation(@user).deliver
-        format.html { redirect_to(@user, :notice => 'User was successfully updated.')}
+        if params[:user][:password]
+          # email confirmation to user
+          UserMailer.registration_confirmation(@user).deliver 
+          if current_user.admin
+            format.html { redirect_to(users_path, :notice => 'User was successfully updated.')}
+          else
+            format.html { redirect_to(@user, :notice => 'Password was successfully updated.')}
+          end
+        else 
+          format.html { redirect_to(users_path, :notice => 'Contact assignments were successfully updated.')}
+        end
       else
         format.html { render :action => "edit" }
       end
@@ -57,4 +66,8 @@ class UsersController < ApplicationController
     end
   end
 
+  # assign contacts
+  def assign 
+   @user = User.find(params[:id])
+  end
 end
