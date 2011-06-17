@@ -35,7 +35,7 @@
     <span class="ui-icon ui-icon-pencil"></span>
     <%= link_to "Edit contact", edit_contact_path(@contact) %><br />
   <% end %>
-  <% unless @contact.user_id.blank? %>
+  <% unless @contact.user_id.blank? or @contact.user.books.blank? %>
     <span class="ui-icon ui-icon-bookmark"></span>
     <%= link_to "Show my library", books_path(:user_id => @contact.user_id) %>
   <% end %>
@@ -53,18 +53,25 @@
   <li><strong>Groups:</strong> <%= @contact.group_names %></li>
   <% end %>
   
+  <% unless @contact.about.blank? %>
+  <div class="new-line"></div>
+  <li><strong>About:</strong> <%= @contact.about %></li> 
+  <% end %>
+
   <% unless @contact.family_id.blank? %>
   <div class="new-line"></div>
-  <li><strong>Family Members:</strong> 
+  <li>
+  <% if @contact.family.image? %>
+    <%= image_tag @contact.family.image_url(:thumb) %> <br />
+  <% elsif can? :update, @contact.family %>
+    <span class="ui-icon ui-icon-image"></span>
+    <%= link_to "Upload family picture", edit_family_path(@contact.family) %> <br />
+  <% end %>
+  <strong>Family Members:</strong> 
   <% @contact.family.contacts.each do |c| %>
     <%= link_to c.first_name, c %>
   <% end %>
   </li>
-  <% end %>
-
-  <% unless @contact.about.blank? %>
-  <div class="new-line"></div>
-  <li><strong>About:</strong> <%= @contact.about %></li> 
   <% end %>
 </ul>
   </div><!-- end contact-body -->

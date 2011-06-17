@@ -1,0 +1,22 @@
+<%= render 'admin_sidebar' %>
+
+<h1><%= @user.name %>'s Contacts</h1>
+
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="ui-widget">
+      <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+        <% for message in @user.errors.full_messages %>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span><%= message %><br />
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :contact_tokens, "Contacts" %><br />
+    <%= f.text_field :contact_tokens, "data-pre" => @user.contacts.order(:first_name).map{|c| {"id" => c.id, "name" => c.name + " - " + c.email}}.to_json %>
+  </div>
+  <p class="button"><%= f.submit :value => "Update User Contacts" %></p>
+<% end %>
+

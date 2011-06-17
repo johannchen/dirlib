@@ -1,12 +1,15 @@
 <%= render 'contacts/directory_sidebar' %>
-<h1>Family</h1>
+<h1>Family of <%= @family.name %></h1>
 <p>
-  <b>Name:</b>
-  <%= @family.name %>
+  <%= image_tag @family.image_url(:thumb) if @family.image? %>
 </p>
 <p>
-  <b>Description:</b>
-  <%= @family.description%>
+  <strong>About: </strong><%= @family.description%>
 </p>
-
+<p>
+  <strong>Family Members: </strong>
+  <% @family.contacts.each do |c| %>
+    <%= link_to c.first_name, c %>
+  <% end %>
+</p>
 <%= link_to 'Edit', edit_family_path(@family) %> 

@@ -1,9 +1,14 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 $(function() {
+  $("#user_contact_tokens").tokenInput("/contacts.json", {
+    prePopulate: $("#user_contact_tokens").data("pre")
+  });
+
   $("#contact_birthday").datepicker({
     dateFormat: 'yy-mm-dd'
   });
+
   $("#contact_attend_since").datepicker({
     dateFormat: 'yy-mm-dd'
   });
@@ -34,10 +39,6 @@ $(function() {
     dateFormat: 'yy-mm-dd'
   });
 
-  // TODO: problem on page reload with link_to
-  //  $(".menu ul").delegate("li", "click", function() {
-  //  $(this).toggleClass("current_page_item").siblings().removeClass("current_page_item");
-  //});
 
   var path = location.pathname.split("/");
   var menu_path = path[1];
@@ -49,12 +50,12 @@ $(function() {
     menu_path = "users";
   }
 
-  console.log(menu_path);
-
   if(menu_path != "") {
     $('#access ul li').removeClass("current_page_item");
     $('#access ul li a[href="/' + menu_path + '"]').parent().attr('class', 'current_page_item');
   }
+
+
 });
 
 

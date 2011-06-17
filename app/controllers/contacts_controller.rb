@@ -10,17 +10,25 @@ class ContactsController < ApplicationController
       contact_alias = @group.contacts.active
       @contacts = contact_alias.page(params[:page]).per(5)
     elsif params[:term]
+      # jquery auto complete
       @contacts = Contact.auto_complete(params[:term])
+    elsif params[:q]
+      # token input auto complete
+      @contacts = Contact.search(params[:q])
     else
       contact_alias = current_user.contacts.active
       @contacts = contact_alias.page(params[:page]).per(5)
     end
 
-    @email_alias = contact_alias.with_email.map(&:name_email).join(', ') unless params[:term]
+    unless params[:term] or params[:q]
+      @contacts_count = contact_alias.size 
+      @email_alias = contact_alias.with_email.map(&:name_email).join(', ') 
+    end
 
     respond_to do |format|
       format.html
-      format.json { render :json => @contacts.order(:first_name).map(&:name_email) } 
+      format.json { render :json => @contacts.order(:first_name).map{|c| {"id" => c.id, "name" => c.name + " - " + c.email}} } if params[:q]
+      format.json { render :json => @contacts.order(:first_name).map(&:name_email) } if params[:term]
     end
   end
 
@@ -35,7 +43,6 @@ class ContactsController < ApplicationController
       if @contact.user_id
         redirect_to user_path(current_user), :notice => 'Profile was created.'
       else
-        # create contact under user
         @contact.users << current_user
         redirect_to @contact, :notice => 'Contact was created.'
       end
@@ -53,7 +60,7 @@ class ContactsController < ApplicationController
   
     @contact.family_id = nil if params[:family_name].blank?
     if @contact.update_attributes(params[:contact])
-      if @contact.user_id
+      if @contact.user_id == current_user.id
         redirect_to user_path(current_user), :notice => 'Profile was successfully updated.'
       else
         redirect_to @contact, :notice => 'Contact was successfully updated.'

@@ -11,7 +11,6 @@ class Book < ActiveRecord::Base
     where(['title like ? or authors like ?', "%#{search}%", "%#{search}%"]).order("title") if search
   end
 
-  #TODO: handle exception for open uri 
   def self.find_google_book(vid)
     uri = "https://www.googleapis.com/books/v1/volumes/" + vid
     google_book = ActiveSupport::JSON.decode(open(uri).read)
@@ -29,7 +28,6 @@ class Book < ActiveRecord::Base
       book = ""
   end
 
-  #TODO: map books
   def self.search_google_books(q)
     if q
       q.gsub! /\s+/, '+'
@@ -40,7 +38,6 @@ class Book < ActiveRecord::Base
   end
 
   def owner_name 
-    #User.find(user_id).name unless user_id.blank?
     user.name if user 
   end
 

@@ -8,14 +8,22 @@ Dirlib::Application.routes.draw do
 
   resources :posts
 
+  resources :relationships
+
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
   
   root :to => "home#index"
 
   resources :sessions
-  resources :users
   resources :families
+
+  resources :users do
+    get 'assign', :on => :member
+    put 'disable', :on => :member
+    put 'activate', :on => :member
+    get 'disabled', :on => :collection
+  end
 
   resources :groups do
     resources :contacts

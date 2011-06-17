@@ -1,0 +1,25 @@
+<%= render 'users/admin_sidebar' %>
+
+<h1>Disabled Users</h1>
+
+Total <strong><%= @users.size %></strong> disabled users
+<table>
+  <tr>
+    <th>Name</th><th>Email</th><th>Admin</th><th># Contacts</th><th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email%></td>
+    <td><%= "Admin" if user.admin %></td>
+    <td><%= link_to user.contacts.size, assign_user_path(user) %></td>
+    <td><%= link_to 'Show', user.contact %>
+    <% if can? :update, user%>
+      | <%= link_to 'Activate', activate_user_path(user), :confirm => 'This user will be able to login again. Are you sure?', :method => :put %>
+    <% end %>
+    </td>
+  </tr>
+<% end %>
+</table>
+

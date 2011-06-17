@@ -1,6 +1,9 @@
+.DS_Store
 .bundle
 .rvmrc
 config/database.yml
 db/*.sqlite3
+db/schema.rb
 log/*.log
 tmp/**/*
+public/uploads/*

@@ -21,8 +21,8 @@ gem 'cancan'
 gem 'kaminari'
 
 # image upload
-#gem 'rmagick'
-#gem 'carrierwave'
+gem 'mini_magick'
+gem 'carrierwave'
 
 # Use unicorn as the web server
 # gem 'unicorn'

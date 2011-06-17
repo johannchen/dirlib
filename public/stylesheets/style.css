@@ -222,7 +222,7 @@ hr {
 
 /* Text elements */
 p {
-	margin-bottom: 18px;
+	margin-bottom: 5px;
 }
 ul {
 	list-style: square;
@@ -475,7 +475,6 @@ div.menu li {
 	font-size: 16px;
 	line-height: 24px;
 }
-#content p,
 #content ul,
 #content ol,
 #content dd,

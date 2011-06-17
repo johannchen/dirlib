@@ -1,16 +1,20 @@
 class BooksController < ApplicationController
   load_and_authorize_resource
+  after_filter :assign_contact_to_user, :only => [:create, :update]
 
   def index
     if params[:search]
-      @books = Book.search(params[:search]).page(params[:page]).per(5)
+      book_list = Book.search(params[:search])
     elsif params[:borrow]
-      @books = current_user.contact.books.order("title").page(params[:page]).per(5)
+      book_list = current_user.contact.books.order("title")
     elsif params[:user_id]
-      @books = User.find(params[:user_id]).books.order("title").page(params[:page]).per(5)
+      book_list = User.find(params[:user_id]).books.order("title")
     else
-      @books = current_user.books.order("title").page(params[:page]).per(5)
+      book_list = current_user.books.order("title")
     end
+
+    @book_count = book_list.size
+    @books = book_list.page(params[:page]).per(5)
   end
 
   def new
@@ -53,4 +57,14 @@ class BooksController < ApplicationController
     @book.destroy
     redirect_to books_url, :notice => 'Book has been successfully deleted.'
   end
+
+private
+  def assign_contact_to_user
+    # assign contact to current user if borrower is new
+    # if the borrower has no relationship, the borrower is a new contact
+    if !@book.contact_id.blank? and Relationship.where(:contact_id => @book.contact_id).blank?
+      Relationship.create!(:user_id => current_user.id, :contact_id => @book.contact_id)
+    end
+  end
+
 end
