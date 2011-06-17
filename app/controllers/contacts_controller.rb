@@ -60,7 +60,7 @@ class ContactsController < ApplicationController
   
     @contact.family_id = nil if params[:family_name].blank?
     if @contact.update_attributes(params[:contact])
-      if @contact.user_id
+      if @contact.user_id == current_user.id
         redirect_to user_path(current_user), :notice => 'Profile was successfully updated.'
       else
         redirect_to @contact, :notice => 'Contact was successfully updated.'

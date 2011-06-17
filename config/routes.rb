@@ -20,6 +20,9 @@ Dirlib::Application.routes.draw do
 
   resources :users do
     get 'assign', :on => :member
+    put 'disable', :on => :member
+    put 'activate', :on => :member
+    get 'disabled', :on => :collection
   end
 
   resources :groups do

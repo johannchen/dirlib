@@ -15,10 +15,14 @@
 </p>
 <br />
 <em>Owner:</em> <%= link_to @book.owner_name, @book.user.contact %> <br />
-<% if @book.contact_id.blank? %>
-This book is <em>available</em> to borrow. Please contact the owner for more information.
+<% if @book.user.active? %>
+  <% if @book.contact_id.blank? %>
+    This book is <em>available</em> to borrow. Please contact the owner for more information.
+  <% else %>
+    <em>Borrowed By:</em> <%= link_to @book.borrower_name, @book.contact %> on <%= @book.borrowed_date %>
+  <% end %>
 <% else %>
-<em>Borrowed By:</em> <%= link_to @book.borrower_name, @book.contact %> on <%= @book.borrowed_date %>
+  Sorry, this book is <em>NOT</em> available to borrow.
 <% end %>
 <br />
 <% if can? :update, @book %>

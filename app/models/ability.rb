@@ -12,7 +12,9 @@ class Ability
       can :read, Contact
       can :create, Contact
       can :update, Contact, :id => user.contact_ids 
-      can :manage, Family
+      can :read, Family
+      can :create, Family
+      can :update, Family, :id => user.contact.family_id
       can :read, Post 
       can :create, Post 
       can :update, Post, :id => user.post_ids 

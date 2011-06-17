@@ -1,7 +1,8 @@
 <%= render 'admin_sidebar' %>
 
-<h1>Users</h1>
+<h1>Active Users</h1>
 
+Total <strong><%= @users.size %></strong> active users
 <table>
   <tr>
     <th>Name</th>
@@ -19,7 +20,7 @@
     <td><%= link_to user.contacts.size, assign_user_path(user) %></td>
     <td>
     <%= link_to 'Edit', edit_user_path(user) %> | 
-    <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    <%= link_to 'Disable', disable_user_path(user), :confirm => 'This user will not be able to login. Are you sure?', :method => :put %></td>
   </tr>
 <% end %>
 </table>

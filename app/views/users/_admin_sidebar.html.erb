@@ -1,7 +1,8 @@
 <% content_for :sidebar do %>
   <h3 class="widget-title">Users</h3>   
     <ul>
-        <li><%= link_to 'Show users', users_path %></li>
+        <li><%= link_to 'Show active users', users_path %></li>
+        <li><%= link_to 'Show disabled users', disabled_users_path %></li>
         <li><%= link_to 'Add user', new_user_path %></li>
     </ul>
   <br />
