@@ -26,6 +26,7 @@ gem 'carrierwave'
 
 # pdf generation
 gem "pdfkit"
+#gem 'prawn', :git => "git://github.com/sandal/prawn.git", :tag => '0.10.2', :submodules => true
 
 # Use unicorn as the web server
 # gem 'unicorn'
