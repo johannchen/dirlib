@@ -39,7 +39,6 @@ Dirlib::Application.routes.draw do
     get 'removed', :on => :collection
   end
 
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
