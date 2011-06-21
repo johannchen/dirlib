@@ -10,7 +10,7 @@ class Contact < ActiveRecord::Base
   has_many :books
 
   validates_presence_of :first_name, :last_name
-  validates_uniqueness_of :email, :allow_nil => true
+  validates_uniqueness_of :email, :allow_blank => true
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :allow_blank => true
   validates_numericality_of :cell_phone, :work_phone, :home_phone, :allow_blank => true
   validates_length_of :cell_phone, :work_phone, :home_phone, :is => 10, :allow_blank => true

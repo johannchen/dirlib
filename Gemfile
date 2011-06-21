@@ -24,6 +24,9 @@ gem 'kaminari'
 gem 'mini_magick'
 gem 'carrierwave'
 
+# pdf generation
+gem "pdfkit"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
