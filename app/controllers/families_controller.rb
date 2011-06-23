@@ -10,6 +10,7 @@ class FamiliesController < ApplicationController
   end
 
   def show
+    @dad = Contact.find(@family.dad) if @family.dad
   end
 
   def new

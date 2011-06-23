@@ -16,6 +16,7 @@ Dirlib::Application.routes.draw do
   root :to => "home#index"
 
   resources :sessions
+
   resources :families
 
   resources :users do
@@ -37,6 +38,7 @@ Dirlib::Application.routes.draw do
     put 'remove', :on => :member
     put 'activate', :on => :member
     get 'removed', :on => :collection
+    get 'print', :on => :collection
   end
 
   # The priority is based upon order of creation:

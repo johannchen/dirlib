@@ -15,8 +15,9 @@ class Contact < ActiveRecord::Base
   validates_numericality_of :cell_phone, :work_phone, :home_phone, :allow_blank => true
   validates_length_of :cell_phone, :work_phone, :home_phone, :is => 10, :allow_blank => true
 
+  scope :members, where(:member => true)
   scope :with_email, where("email is not null and email != ''")
-  scope :active, where(:active => true).order("first_name")
+  scope :active, where(:active => true)
   scope :active_non_user, where("user_id is null").active.with_email.order("first_name")
 
   def self.search(search)
@@ -25,6 +26,13 @@ class Contact < ActiveRecord::Base
 
   def self.auto_complete(term)
     where(['first_name like ? or last_name like ?', "%#{term}%", "%#{term}%"]).with_email.order("first_name") if term
+  end
+
+  def self.printed_members
+    f_ids = self.members.group(:family_id).map(&:id)
+    m_ids = self.members.where(:family_id => nil).map(&:id)
+    p_ids = f_ids + m_ids
+    where(:id => p_ids).order(:last_name)
   end
 
   def address
@@ -40,6 +48,10 @@ class Contact < ActiveRecord::Base
 
   def name
     first_name + " " + last_name
+  end
+
+  def all_name
+    other_name ? name + " " + other_name : name
   end
 
   def name_email

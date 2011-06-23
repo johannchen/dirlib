@@ -48,8 +48,8 @@ Dirlib::Application.configure do
   config.active_support.deprecation = :notify
 
   # PDFKit
-  PDFKit.configure do |config|
-    config.wkhtmltopdf = '/home/p60161r4/bin/wkhtmltopdf'
-  end
+  #PDFKit.configure do |config|
+  #  config.wkhtmltopdf = '/home/p60161r4/bin/wkhtmltopdf'
+  #end
 
 end

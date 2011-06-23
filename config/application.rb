@@ -31,7 +31,7 @@ module Dirlib
     # config.i18n.default_locale = :de
 
     # PDFKit config
-    config.middleware.use "PDFKit::Middleware", :print_media_type => true
+    #config.middleware.use "PDFKit::Middleware", :print_media_type => true
 
     # JavaScript files you want as :defaults (application.js is always included).
     config.action_view.javascript_expansions[:defaults] = %w(jquery rails jquery.tokeninput)

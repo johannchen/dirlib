@@ -13,7 +13,17 @@
     <%= f.label :name %> (e.g John and Mary Lee) <br />
     <%= f.text_field :name %>
   </div>
-  
+
+  <div class="field">
+    <%= f.label :dad %>
+    <%= f.select :dad, @family.contacts.map {|c| [c.first_name, c.id]}, {:include_blank => true} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mom %>
+    <%= f.select :mom, @family.contacts.map {|c| [c.first_name, c.id]}, {:include_blank => true} %>
+  </div>
+    
   <div class="field">
     <%= f.label :family_picture %><br />
     <%= f.file_field :image %>

@@ -1,0 +1,16 @@
+<h1>Print Directory</h1>
+
+<% @contacts.each do |contact| %>
+<p>
+  <% if contact.family_id.blank? %>
+    <%= contact.all_name %><br />
+    <%= contact.address %><br />
+    <%= contact.email %><br />
+    <%= contact.home_phone %>
+  <% else %>  
+  <%= image_tag contact.family.image_url(:thumb) if contact.family.image? %><br />
+  <%= contact.family.info %><br /> 
+  <% end %>
+</p>
+<% end %>
+

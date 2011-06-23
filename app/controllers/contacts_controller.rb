@@ -89,4 +89,8 @@ class ContactsController < ApplicationController
       redirect_to contacts_url, :notice => "Contact has been successfully activated."
     end
   end
+
+  def print
+    @contacts = Contact.printed_members
+  end
 end
