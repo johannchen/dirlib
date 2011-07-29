@@ -15,12 +15,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :dad %>
+    <%= f.label :primary_contact %>
     <%= f.select :dad, @family.contacts.map {|c| [c.first_name, c.id]}, {:include_blank => true} %>
   </div>
 
   <div class="field">
-    <%= f.label :mom %>
+    <%= f.label :secondary_contact %>
     <%= f.select :mom, @family.contacts.map {|c| [c.first_name, c.id]}, {:include_blank => true} %>
   </div>
     

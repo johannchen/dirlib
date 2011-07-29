@@ -1,0 +1,8 @@
+<div data-role="header">
+  <h1><%= @post.title %></h1>
+  <%= link_to 'List Posts', posts_url, "class" => "ui-btn-right" %>
+</div>
+
+<div data-role="content">
+  <%= @post.content %>
+</div>

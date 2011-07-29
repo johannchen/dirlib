@@ -14,8 +14,7 @@
 </p>
 
 <p>
-  <%= @dad.address %> <br />
-  <%= number_to_phone(@dad.home_phone, :area_code => true) unless @dad.home_phone.blank? %>
+  <%= @family.info %>
 </p>
 
 <%= link_to 'Edit', edit_family_path(@family) %> 

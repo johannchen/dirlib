@@ -5,6 +5,10 @@ class Family < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   validates_uniqueness_of :name
+
+  def children
+    Contact.where(:id => self.contact_ids - [dad, mom])
+  end
  
   def dad_contact 
     Contact.find(dad) if dad
@@ -16,18 +20,27 @@ class Family < ActiveRecord::Base
 
   def info
     info = ''
-    # parents names
-    info << "#{dad_contact.all_name}<br />" unless dad.blank?
-    info << "#{mom_contact.all_name}<br />" unless mom.blank?
+    # parents names and email
+    unless dad.blank?
+      info << "#{dad_contact.all_name}<br />"
+      info << "#{dad_contact.email}<br />" 
+    end
+    
+    unless mom.blank?
+      info << "#{mom_contact.all_name}<br />"
+      info << "#{mom_contact.email}<br />"
+    end
 
     # children names
+    unless children.blank?
+      children.each do |child|
+        info << "#{child.all_name}<br />"
+        # info << "#{child.email}<br />" unless child.email.blank?
+      end
+    end 
 
     # home address 
     info << "#{dad_contact.address}<br />" unless dad.blank?
-
-    # parents emails
-    info << "#{dad_contact.email}<br />" unless dad.blank?
-    info << "#{mom_contact.email}<br />" unless mom.blank?
 
     # home phone
     info << "#{dad_contact.home_phone}<br />" unless dad.blank?
