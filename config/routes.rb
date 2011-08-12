@@ -1,5 +1,6 @@
 Dirlib::Application.routes.draw do
 
+
   match "profile" => "users#show"  
 
   resources :books
@@ -9,6 +10,8 @@ Dirlib::Application.routes.draw do
   resources :posts
 
   resources :relationships
+
+  resources :password_resets
 
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
