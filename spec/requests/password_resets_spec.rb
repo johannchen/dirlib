@@ -8,5 +8,16 @@ describe "PasswordResets" do
     fill_in "Email", :with => user.email
     click_button "Reset Password"
     current_path.should eq(root_path)
+    page.should have_content("Email sent")
+    last_email.to.should include(user.email)
+  end
+
+  it "does not email invalid user when requesting password reset" do
+    visit log_in_path
+    click_link "password"
+    fill_in "Email", :with => "nobody@example.com"
+    click_button "Reset Password"
+    current_path.should eq(root_path)
+    last_email.should be_nil
   end
 end
