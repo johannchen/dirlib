@@ -1,5 +1,6 @@
 Dirlib::Application.routes.draw do
 
+  get "messages/index"
 
   match "profile" => "users#show"  
 
@@ -12,6 +13,8 @@ Dirlib::Application.routes.draw do
   resources :relationships
 
   resources :password_resets
+
+  resources :messages
 
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
