@@ -5,8 +5,8 @@ FactoryGirl.define do
 
   factory :user do 
     email
-    first_name "Johann"
-    last_name "Chen"
+    first_name "foo"
+    last_name "chen"
     password "secret"
     
     factory :admin do
@@ -15,9 +15,21 @@ FactoryGirl.define do
   end
 
   factory :contact do
-    first_name "Johann"
-    last_name "Chen"
+    first_name "foo"
+    last_name "chen"
     email
     user
   end
+
+  factory :category do
+    name "Housing"
+  end
+
+  factory :post do
+    title "post foo"
+    content "post content"
+    category
+    user
+  end
+
 end
