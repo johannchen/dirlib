@@ -32,4 +32,8 @@ FactoryGirl.define do
     user
   end
 
+  factory :message do
+    title "message"
+    speaker "foo"
+  end
 end

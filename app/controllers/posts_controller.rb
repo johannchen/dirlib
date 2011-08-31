@@ -23,7 +23,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post.user_id = current_user.id
+    # @post.user_id = current_user.id
+    @post = current_user.posts.build(params[:post])
     respond_to do |format|
       if @post.save
         format.html { redirect_to(@post, :notice => 'Post was successfully created.') }

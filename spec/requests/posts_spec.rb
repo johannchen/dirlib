@@ -2,14 +2,10 @@ require 'spec_helper'
 
 describe "Posts" do
 
-  #def login_as(user_type)
-  #  user = Factory.build(user_type)
-  #  controller.stub!(:current_user).and_return(user)
-  #  return user
-  #end
-  #before(:each) do
-  #  @user = login_as(:user)
-  #end
+  before(:each) do
+    user = Factory(:user)
+    user_login(user)
+  end
 
   describe "GET /posts" do
     it "displays posts" do
@@ -20,14 +16,30 @@ describe "Posts" do
 
   describe "POST /posts" do
     it "creates post" do
-      user = Factory(:user)
-      ApplicationController.stub!(:current_user).and_return(user)
+      Factory(:category)
       visit new_post_path
+      page.should have_content("Housing")
       fill_in "Title", :with => "house for rent"
       fill_in "Content", :with => "$1500/month 3br"
-      # select "Housing", :from => "category_id"
-      # click_button "Create Post"
-      #page.should have_content("Post was created successfully.")
-    end 
+      select "Housing", :from => "Category"
+      click_button "Create Post"
+      page.should have_content("Post was successfully created")
+    end
   end
+
+  describe "PUT /posts" do
+    it "updates post" do
+      mypost = Factory(:post)
+      assert_equal(mypost.category.name, "Housing", "category should be housing")
+      user_login(mypost.user)
+      visit edit_post_path(mypost)
+      page.should have_content("post content")
+      fill_in "Title", :with => "Change Title"
+      click_button "Update Post" 
+      page.should have_content("Post was successfully updated")
+      page.should have_content("Change Title")
+      current_path.should eq(post_path(mypost))
+    end
+  end
+
 end
