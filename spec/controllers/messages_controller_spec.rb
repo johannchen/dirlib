@@ -24,7 +24,7 @@ describe MessagesController do
   # Message. As you add validations to Message, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {:title => "message title", :speaker => "bob", :mdate => "2011-09-01"}
   end
 
   describe "GET index" do

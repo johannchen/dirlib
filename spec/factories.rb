@@ -34,6 +34,7 @@ FactoryGirl.define do
 
   factory :message do
     title "message"
-    speaker "foo"
+    speaker "foo lee"
+    mdate "2011-01-01"
   end
 end
