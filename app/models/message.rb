@@ -1,4 +1,5 @@
 class Message < ActiveRecord::Base
+  belongs_to :user
   validates_presence_of :title, :speaker, :mdate 
   
   def self.search(search)

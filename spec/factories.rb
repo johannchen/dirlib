@@ -33,8 +33,12 @@ FactoryGirl.define do
   end
 
   factory :message do
+    mdate "2011-01-01"
     title "message"
     speaker "foo lee"
-    mdate "2011-01-01"
+    verses "john 3:16"
+    summary "what a message!"
+    application "do the right thing"
+    url "http://www.gracedimension.com"
   end
 end

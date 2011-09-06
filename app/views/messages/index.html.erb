@@ -10,6 +10,7 @@
     <%= message.title %>
     <%= message.speaker %>
     <%= message.mdate %>
+    <%= link_to 'Delete', message_path(message), :confirm => "This message will be deleted. Are you sure?", :method => :delete %>
   </li>
 <% end %>
 </ul>

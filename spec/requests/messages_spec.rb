@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "Messages" do
-  describe "GET /messages" do
+  describe "display a list of all messages" do
     before :each do
       10.times do 
         Factory(:message)
@@ -41,8 +41,17 @@ describe "Messages" do
       end
     end 
   end
-  
-  describe "POST /messages" do
+
+  describe "show a specific message" do
+    it "shows a message" do
+      message = Factory(:message)
+      visit show_message_path(message)
+      page.should have_content("what a message!")
+      page.should have_content("john 3:16")
+    end 
+  end 
+ 
+  describe "create a new message" do
     it "creates message" do
       visit new_message_path
       click_button "Create"
@@ -58,11 +67,11 @@ describe "Messages" do
     end
   end
   
-  describe "PUT /messages" do
+  describe "update a specific message" do
     it "updates message" do
       message = Factory(:message)
       visit edit_message_path(message)
-      page.should have_content("lee")
+      page.should have_field("Speaker", :with => "foo lee")
       fill_in "Speaker", :with => ""
       click_button "Update"
       page.should have_content("Speaker can't be blank")
@@ -73,6 +82,20 @@ describe "Messages" do
       current_path.should eq(message_path(message))
     end
   end
+
+#  describe "DELETE /messages" do 
+#    it "destroys message", :js => true do
+#      message = Factory(:message)
+#      visit messages_path
+#      page.should have_content("foo lee")
+#      page.should have_link("Delete")
+#      click_link "Delete"
+#      page.should have_content("Are you sure?")
+#      click_button "Ok"
+#      page.should have_no_content("foo lee")
+#    end
+#  end
+
   private
   def display_all_messages_with_pagination
     page.all("#messages li").count.should eq(10)

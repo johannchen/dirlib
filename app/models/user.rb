@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :contacts, :through => :relationships
   has_many :posts
   has_many :books
+  has_many :messages
 
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :admin, :contact_tokens, :active
 
