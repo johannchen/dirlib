@@ -36,7 +36,7 @@ FactoryGirl.define do
     mdate "2011-01-01"
     title "message"
     speaker "foo lee"
-    verses "john 3:16"
+    verses "John 3:16, Matthew 6:19-21"
     summary "what a message!"
     application "do the right thing"
     url "http://www.gracedimension.com"

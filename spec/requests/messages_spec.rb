@@ -45,9 +45,10 @@ describe "Messages" do
   describe "show a specific message" do
     it "shows a message" do
       message = Factory(:message)
-      visit show_message_path(message)
+      visit message_path(message)
       page.should have_content("what a message!")
-      page.should have_content("john 3:16")
+      page.should have_link("John 3:16")
+      page.should have_link("Matthew 6:19-21")
     end 
   end 
  

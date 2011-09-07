@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
+<p>
+  <b>Mdate:</b>
+  <%= @message.mdate %>
+</p>
 
 <p>
   <b>Title:</b>
@@ -9,12 +13,29 @@
   <b>Speaker:</b>
   <%= @message.speaker %>
 </p>
+<% unless @message.verses.blank? %>
+<p>
+<b>Verses:</b>
+  <% @message.verses_to_a.each do |v| %>
+    <%= link_to v, "" %> <br />
+  <% end %>
+</p>
+<% end %>
 
 <p>
-  <b>Mdate:</b>
-  <%= @message.mdate %>
+  <b>Summary:</b>
+  <%= @message.summary %>
 </p>
 
+<p>
+  <b>Application:</b>
+  <%= @message.application %>
+</p>
+
+<p>
+  <b>URL:</b>
+  <%= @message.url %>
+</p>
 
 <%= link_to 'Edit', edit_message_path(@message) %> |
 <%= link_to 'Back', messages_path %>
