@@ -5,4 +5,13 @@ module ApplicationHelper
     gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
     "http://gravatar.com/avatar/#{gravatar_id}.png?d=#{CGI.escape(default_url)}"
   end
+
+  def bible_ref(s)
+    verses = Array.new 
+    if s.index(",").nil? 
+      verses << s
+    else
+      verses << s.split(",")
+    end
+  end
 end

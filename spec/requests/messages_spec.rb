@@ -47,8 +47,8 @@ describe "Messages" do
       message = Factory(:message)
       visit message_path(message)
       page.should have_content("what a message!")
-      page.should have_link("John 3:16")
-      page.should have_link("Matthew 6:19-21")
+      page.should have_content("John 3:16")
+      page.should have_content("God so loved the world")
     end 
   end 
  

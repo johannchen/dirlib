@@ -16,8 +16,9 @@
 <% unless @message.verses.blank? %>
 <p>
 <b>Verses:</b>
-  <% @message.verses_to_a.each do |v| %>
-    <%= link_to v, "" %> <br />
+  <% bible = ESV.new('IP') %>
+  <% bible_ref(@message.verses).each do |v| %>
+    <%= bible.doPassageQuery(v) %> 
   <% end %>
 </p>
 <% end %>
