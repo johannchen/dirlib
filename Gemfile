@@ -49,6 +49,7 @@ group :development, :test do
   #gem 'webrat'
   gem 'rack-bridge'
   gem 'rspec-rails'
+  gem 'pry'
 end
 
 group :test do

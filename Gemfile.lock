@@ -43,6 +43,7 @@ GEM
       activesupport (~> 3.0)
     childprocess (0.2.0)
       ffi (~> 1.0.6)
+    coderay (0.9.8)
     daemons (1.1.2)
     diff-lcs (1.1.2)
     erubis (2.6.6)
@@ -73,12 +74,19 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.6.5)
+      ruby_parser (>= 2.0.5)
     mime-types (1.16)
     mini_magick (3.3)
       subexec (~> 0.1.0)
     nokogiri (1.5.0)
     pg (0.11.0)
     polyglot (0.3.2)
+    pry (0.9.5)
+      coderay (>= 0.9.8)
+      method_source (>= 0.6.5)
+      ruby_parser (>= 2.0.5)
+      slop (~> 2.1.0)
     rack (1.2.3)
     rack-bridge (0.6.1)
       jaws (= 0.6.0)
@@ -115,12 +123,16 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.6.0)
+    ruby_parser (2.3.0)
+      sexp_processor (~> 3.0)
     rubyzip (0.9.4)
     selenium-webdriver (0.2.2)
       childprocess (>= 0.1.9)
       ffi (>= 1.0.7)
       json_pure
       rubyzip
+    sexp_processor (3.0.6)
+    slop (2.1.0)
     subexec (0.1.0)
     thin (1.2.11)
       daemons (>= 1.0.9)
@@ -148,6 +160,7 @@ DEPENDENCIES
   kaminari
   mini_magick
   pg
+  pry
   rack-bridge
   rails (= 3.0.9)
   rspec-rails

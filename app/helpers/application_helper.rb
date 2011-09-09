@@ -13,5 +13,6 @@ module ApplicationHelper
     else
       verses << s.split(",")
     end
+    return verses
   end
 end

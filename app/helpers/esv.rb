@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class ESV
   def initialize(key)
     @options = ["include-short-copyright=0",
@@ -11,14 +13,8 @@ class ESV
     passage = passage.gsub(/\s/, "+")
     passage = passage.gsub(/\:/, "%3A")
     passage = passage.gsub(/\,/, "%2C")
-    get_url @base_url +
-             "&passage=#{passage}&#{@options}"
-  end
-  
-  private
-
-  def get_url(url)
-    Net::HTTP.get(::URI.parse(url))
+    uri = @base_url + "&passage=#{passage}&#{@options}"
+    open(uri).read
   end
 end
 

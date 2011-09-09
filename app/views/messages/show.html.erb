@@ -17,7 +17,8 @@
 <p>
 <b>Verses:</b>
   <% bible = ESV.new('IP') %>
-  <% bible_ref(@message.verses).each do |v| %>
+  <% verses = bible_ref(@message.verses) %>
+  <% verses.each do |v| %>
     <%= bible.doPassageQuery(v) %> 
   <% end %>
 </p>
